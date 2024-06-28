@@ -7,6 +7,7 @@ on:
 
 jobs:
   build-and-test:
+    environment: DEPLOYMENT_SECRET
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
