@@ -1,0 +1,23 @@
+name: CI with Merge Protection
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install latest nightly
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+          components: rustfmt, clippy
+      - name: Configure Git to Use the PAT Token
+        run: git config --global url."https://oauth2:${{ secrets.GH_PAT }}@github.com".insteadOf https://github.com
+      - name: Clone Repo
+        run: git clone ${{ secrets.SRC_GEN }} gen-src
