@@ -6,11 +6,12 @@
 - code: thoi_gian_rip
 - code: thoi_gian_ghi_hien_ban
 - code: thoi_gian_che_ban_khac_kq
+- code: thoi_gian_in_khac_kq
 - code: thoi_gian_can_mang
 - code: thoi_gian_pha_cat_bia
 - code: thoi_gian_pha_cat_ruot
 - code: thoi_gian_gap_sach
+- code: thoi_gian_bat_tay
 - code: thoi_gian_khau_chi
-- code: CHRTGKMLH
-- code: CHRTGDG
-#- code: CHRSMPP
+- code: thoi_gian_vao_bia_xen
+- code: thoi_gian_hoan_thien_khac_kq
