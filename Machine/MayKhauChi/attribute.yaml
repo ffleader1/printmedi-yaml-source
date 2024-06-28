@@ -4,5 +4,5 @@
   unit: Phút
 - name: Tốc độ hoàn thành công việc khâu chỉ
   alias: toc_do_khau_chi
-  description: Định mức thời gian hoàn thành công việc - máy khâu chỉ
+  description: Tốc độ máy khâu chỉ
   unit: Tờ/Giờ

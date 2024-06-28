@@ -4,5 +4,5 @@
   unit: Phút
 - name: Tốc độ cán màng
   alias: toc_do_can_mang
-  description: Tốc độ hoàn thành công việc cán màng
+  description: Tốc độ máy cán màng
   unit: m/Phút
