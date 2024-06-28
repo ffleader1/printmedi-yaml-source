@@ -1,0 +1,15 @@
+- name: Thời gian gấp sách
+  description: Tính thời gian gấp sách
+  case:
+    - machine:
+        processing: khau_chi_bia_keo_nhiet
+        calculation: thoi_gian_gap_sach
+        specification:
+          thoi_gian_chuan_bi_may_gap_sach: 1
+          toc_do_gap_sach: 60
+      input:
+        so_luong_to_in_ruot: 300
+        so_trang_ruot_sach: 600
+        kieu_binh_ruot_sach: 2
+      output:
+        thoi_gian_gap_sach: 600

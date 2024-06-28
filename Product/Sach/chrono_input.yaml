@@ -1,0 +1,326 @@
+- code: CHRNLT
+  name: Năng lực soát lỗi, kiểm tra file chữ
+  alias: nang_luc_kiem_tra_chu
+  description: Năng lực soát lỗi, kiểm tra file chữ trung bình của một nhân viên. Dùng thể tính Thời gian soát lỗi, kiểm tra file chữ.
+  tex: \mathcal{C}\mathscr{i}Det_{txt}
+  unit: Trang/Phút
+  section: CHR.INP
+  constraint:
+    min: 0.1
+- code: CHRKTTCT
+  name: Nhân lực soát lỗi, kiểm tra file chữ
+  alias: nhan_luc_kiem_tra_chu
+  description: Số nhân lực tham gia soát lỗi, kiểm tra file chữ. Dùng thể tính Thời gian soát lỗi, kiểm tra file chữ.
+  tex: \mathcal{C}\mathscr{i}No_{txt}
+  unit: Người|Thiết bị
+  section: CHR.INP
+  constraint:
+    min: 1
+- code: CHRNLI
+  name: Năng lực xử lý ảnh, kiểm tra file ảnh
+  alias: nang_luc_kiem_tra_anh
+  description: Năng lực xử lý ảnh, kiểm tra file ảnh trung bình của một nhân viên. Dùng để tính Thời gian xử lý ảnh, kiểm tra file ảnh.
+  tex: \mathcal{C}\mathscr{i}Det_{img}
+  unit: Trang/Phút
+  section: CHR.INP
+  constraint:
+    min: 0.1
+- code: CHRKTICT
+  name: Nhân lực xử lý ảnh, kiểm tra file ảnh
+  alias: nhan_luc_kiem_tra_anh
+  description: Số nhân lực tham gia xử lý ảnh, kiểm tra file ảnh. Dùng để tính Thời gian xử lý ảnh, kiểm tra file ảnh.
+  tex: \mathcal{C}\mathscr{i}No_{img}
+  unit: Người|Thiết bị
+  section: CHR.INP
+  constraint:
+    min: 0
+- code: CHRNLDT
+  name: Năng lực xử lý dàn trang
+  alias: nang_luc_dan_trang
+  description: Năng lực xử lý dàn trang (Layout) trung bình.
+  tex: \mathcal{C}\mathscr{i}Det_{layout}
+  unit: Phút/Trang
+  section: CHR.INP
+  constraint:
+    min: 0.1
+- code: CHRDTBB
+  name: Định mức thời gian bình bản
+  alias: dinh_muc_thoi_gian_binh_ban
+  description: Định mức thời gian bình bản (Makeready).
+  tex: \mathcal{C}\mathscr{i}Det_{makeready}
+  unit: Phút
+  section: CHR.INP
+  constraint:
+    min: 0
+- code: CHRTDIT
+  name: Tốc độ in thử
+  alias: toc_do_in_thu
+  description: Định mức tốc độ in thử.
+  tex: \mathcal{C}\mathscr{i}Det_{vtpr}
+  unit: Tờ/Phút
+  section: CHR.INP
+  constraint:
+    min: 0.1
+- code: CHRCBIT
+  name: Thời gian chuẩn bị in thử
+  alias: thoi_gian_chuan_bi_in_thu
+  description: Thời gian chuẩn bị in thử.
+  tex: \mathcal{C}\mathscr{i}Det_{cbtpr}
+  unit: Phút
+  section: CHR.INP
+  constraint:
+    min: 0
+- code: CHRSRIP
+  name: Tốc độ RIP
+  alias: toc_do_rip
+  description: Định mức tốc độ RIP (Raster Image Processor).
+  tex: \mathcal{C}\mathscr{i}Det_{rip}
+  unit: Mặt/Phút
+  section: CHR.INP
+  constraint:
+    min: 0.1
+- code: CHRDHGB
+  name: Tốc độ ghi hiện bản
+  alias: toc_do_ghi_hien_ban
+  description: Định mức tốc độ ghi hiện bản (Platemaking).
+  tex: \mathcal{C}\mathscr{i}Det_{platemaking}
+  unit: Phút/Bản
+  section: CHR.INP
+  constraint:
+    min: 0.1
+- code: CHRDOTH
+  name: Thời gian chế bản khác
+  alias: thoi_gian_che_ban_khac
+  description: Thời gian chế bản khác.
+  tex: \mathcal{C}\mathscr{i}Other_{PreprocessingInput}
+  unit: Phút
+  section: CHR.INP
+  constraint:
+    min: 0
+- code: CHRPRSCOV
+  name: Tốc độ máy in bìa
+  alias: toc_do_may_in_bia_ho_tro
+  description: Tốc độ máy in thực tế
+  tex: \mathcal{M}\mathscr{i}PrterCov_{speed}
+  unit: Tờ/Giờ
+  section: CHR.PRT
+  constraint:
+    min: 0.1
+- code: CHRPRUNCOV
+  name: Số màu máy in bìa hỗ trợ
+  alias: so_mau_may_in_bia_ho_tro
+  description: Số mãu máy in hỗ trợ in cùng lúc (Printing Unit)
+  tex: \mathcal{M}\mathscr{i}PrterCov_{unit}
+  unit: Màu
+  section: CHR.PRT
+  constraint:
+    min: 1
+- code: CHRPRSDCOV
+  name: Số mặt máy in bìa hỗ trợ
+  alias: so_mat_may_in_bia_ho_tro
+  description: Số mặt máy in hỗ trợ in cùng lúc
+  tex: \mathcal{M}\mathscr{i}PrterCov_{side}
+  unit: Mặt
+  section: CHR.PRT
+  option:
+    - 1
+    - 2
+- code: CHRPRSCON
+  name: Tốc độ máy in ruột
+  alias: toc_do_may_in_ruot_ho_tro
+  description: Tốc độ máy in thực tế
+  tex: \mathcal{M}\mathscr{i}PrterCon_{speed}
+  unit: Tờ/Giờ
+  section: CHR.PRT
+  constraint:
+    min: 0.1
+- code: CHRPRUNCON
+  name: Số màu máy in ruột hỗ trợ
+  alias: so_mau_may_in_ruot_ho_tro
+  description: Số mãu máy in hỗ trợ in cùng lúc (Printing Unit)
+  tex: \mathcal{M}\mathscr{i}PrterCon_{unit}
+  unit: Màu
+  section: CHR.PRT
+  constraint:
+    min: 1
+- code: CHRPRSDCON
+  name: Số mặt máy in ruột hỗ trợ
+  alias: so_mat_may_in_ruot_ho_tro
+  description: Số mặt máy in hỗ trợ in cùng lúc
+  tex: \mathcal{M}\mathscr{i}PrterCon_{side}
+  unit: Mặt
+  section: CHR.PRT
+  option:
+    - 1
+    - 2
+- code: CHRPROTH
+  name: Thời gian in khác
+  alias: thoi_gian_in_khac
+  description: Thời gian in khác
+  tex: \mathcal{C}\mathscr{i}Other_{PrintingInput}
+  unit: Phút
+  section: CHR.PRT
+  constraint:
+    min: 0
+- code: CHRHTCV
+  name: Tốc độ cán màng
+  alias: toc_do_can_mang
+  description: Tốc độ hoàn thành công việc cán màng.
+  tex: \mathcal{C}\mathscr{i}Det_{processing}
+  unit: m/Phút
+  section: CHR.COM
+  constraint:
+    min: 0.1
+- code: CHRCBIM
+  name: Thời gian chuẩn bị máy cán màng
+  alias: thoi_gian_chuan_bi_can_mang
+  description: Định mức thời gian chuẩn bị máy cán màng.
+  tex: \mathcal{C}\mathscr{i}Det_{machinepreparation}
+  unit: Phút
+  section: CHR.COM
+  constraint:
+    min: 0
+- code: CHRCBGS
+  name: Thời gian chuẩn bị máy gấp sách
+  alias: thoi_gian_chuan_bi_may_gap_sach
+  description: Định mức thời gian chuẩn bị máy gấp sách.
+  tex: \mathcal{C}\mathscr{i}Det_{Foldingmachineprep}
+  unit: Phút
+  section: CHR.COM
+  constraint:
+    min: 0
+- code: CHRHTGS
+  name: Tốc độ máy gấp sách
+  alias: toc_do_gap_sach
+  description: Định mức thời gian hoàn thành công việc - máy gấp sách
+  tex: \mathcal{C}\mathscr{i}Det_{Foldingmachinefin}
+  unit: Tay sách/Phút
+  section: CHR.COM
+  constraint:
+    min: 0.1
+- code: CHRSCLB
+  name: Tốc độ chuẩn bị và cắt một nhát thực tế - bìa
+  alias: toc_do_cat_mot_nhat_bia
+  description: Tốc độ chuẩn bị trang giấy và cắt một nhát trên thực tế cho bìa
+  tex: \mathcal{C}\mathscr{i}DetKnifePhase_{cover}
+  unit: Chồng/Phút
+  section: CHR.COM
+  constraint:
+    min: 0.1
+- code: CHRCHHEB
+  name: Chiều cao tối đa của chồng cắt - bìa
+  alias: chieu_cao_chong_cat_bia
+  description: Chiều cao tối đa của chồng cắt cho bìa
+  tex: \mathcal{C}\mathscr{i}DetPackHeight_{cover}
+  unit: CM
+  section: CHR.COM
+  constraint:
+    min: 0.1
+- code: CHRSCLR
+  name: Tốc độ chuẩn bị và cắt một nhát thực tế - ruột
+  alias: toc_do_cat_mot_nhat_ruot
+  description: Tốc độ chuẩn bị trang giấy và cắt một nhát trên thực tế cho ruột
+  tex: \mathcal{C}\mathscr{i}DetKnifePhase_{content}
+  unit: Chồng/Phút
+  section: CHR.COM
+  constraint:
+    min: 0.1
+- code: CHRCHHER
+  name: Chiều cao tối đa của chồng cắt - ruột
+  alias: chieu_cao_chong_cat_ruot
+  description: Chiều cao tối đa của chồng cắt cho ruột
+  tex: \mathcal{C}\mathscr{i}DetPackHeight_{content}
+  unit: CM
+  section: CHR.COM
+  constraint:
+    min: 0.1
+- code: CHRCBBT
+  name: Thời gian chuẩn bị bắt tay sách
+  alias: thoi_gian_chuan_bi_bat_tay
+  description: Định mức thời gian chuẩn bị bắt tay sách - máy kỵ mã liên hợp
+  tex: \mathcal{C}\mathscr{i}Prep_{Collating}
+  unit: Phút
+  section: CHR.COM
+  constraint:
+    min: 0
+- code: CHRSPKMLH
+  name: Tốc độ bắt tay sách
+  alias: toc_do_bat_tay
+  description: Tốc độ bắt tay sách bằng máy kỵ mã liên hợp
+  tex: \mathcal{C}\mathscr{i}Det_{Collating}
+  unit: Cuốn/Giờ
+  section: CHR.COM
+  constraint:
+    min: 0.1
+- code: CHRCBKC
+  name: Thời gian chuẩn bị máy khâu chỉ
+  alias: thoi_gian_chuan_bi_may_khau_chi
+  description: Định mức thời gian chuẩn bị máy khâu chỉ.
+  tex: \mathcal{C}\mathscr{i}Det_{Sewingmachineprepa}
+  unit: Phút
+  section: CHR.COM
+  constraint:
+    min: 0
+- code: CHRHTKC
+  name: Tốc độ máy khâu chỉ
+  alias: toc_do_khau_chi
+  description: Định mức thời gian hoàn thành công việc - máy khâu chỉ
+  tex: \mathcal{C}\mathscr{i}Det_{Sewingmachinefin}
+  unit: Tờ/Giờ
+  section: CHR.COM
+  constraint:
+    min: 0.1
+- code: CHRCBBVX
+  name: Thời gian chuẩn bị vào bìa, xén 3 mặt
+  alias: thoi_gian_chuan_bi_vao_bia_xen
+  description: Định mức thời gian chuẩn bị vào bìa, xén 3 mặt - máy kỵ mã liên hợp
+  tex: \mathcal{C}\mathscr{i}Prep_{CastTrim}
+  unit: Phút
+  section: CHR.COM
+  constraint:
+    min: 0
+- code: CHRSPBVX
+  name: Tốc độ vào bìa, xén 3 mặt
+  alias: toc_do_vao_bia_xen
+  description: Tốc độ vào bìa, xén 3 mặt bằng máy kỵ mã liên hợp
+  tex: \mathcal{C}\mathscr{i}Det_{CastTrim}
+  unit: Cuốn/Giờ
+  section: CHR.COM
+  constraint:
+    min: 0.1
+- code: CHRCNTBK
+  name: Số sách mỗi gói
+  alias: so_sach_moi_goi
+  description: Số sách mỗi gói
+  tex: \mathcal{C}\mathscr{i}NoBookPerPack
+  unit: Cuốn
+  section: CHR.COM
+  constraint:
+    min: 1
+- code: CHRSPDG
+  name: Tốc độ đóng gói trung bình
+  alias: toc_do_dong_goi
+  description: Tốc độ đóng gói trung bình một nhân công
+  tex: \mathcal{C}\mathscr{i}Det_{Packaging}
+  unit: Phút/Gói
+  section: CHR.COM
+  constraint:
+    min: 0.1
+- code: CHRNODG
+  name: Số nhân công đóng gói
+  alias: so_nhan_cong_dong_goi
+  description: Số sách mỗi gói
+  tex: \mathcal{C}\mathscr{i}NoBookPerPack
+  unit: Cuốn
+  section: CHR.COM
+  constraint:
+    min: 1
+- code: CHRCMOTH
+  name: Thời gian hoàn thiện khác
+  alias: thoi_gian_hoan_thien_khac
+  description: Thời gian hoàn thiện khác
+  tex: \mathcal{C}\mathscr{i}Other_{CompletionInput}
+  unit: Phút
+  section: CHR.COM
+  constraint:
+    min: 0

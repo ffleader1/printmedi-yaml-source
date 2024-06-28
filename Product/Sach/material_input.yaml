@@ -1,0 +1,162 @@
+- code: MATSPB
+  name: Số trang bìa mỗi cuốn sách
+  alias: so_trang_bia_sach
+  description: Số lượng trang in bìa sách, như bìa trước, bìa sau và lót bìa
+  unit: Trang
+  tex: \mathcal{M}\mathscr{i}{\Sigma}pg_{cover}
+  section: INP.COV
+- code: MATSPR
+  name: Số trang ruột mỗi cuốn sách
+  alias: so_trang_ruot_sach
+  description: Số lượng trang in nội dung bên trong sách, không bao gồm bìa trước, bìa sau và các trang phụ như gáy sách, lăn tay, lót bìa
+  unit: Trang
+  tex: \mathcal{M}\mathscr{i}{\Sigma}pg_{content}
+  section: INP.CON
+- code: MATDLR
+  name: Định lượng giấy ruột
+  alias: dinh_luong_giay_ruot
+  description: Trọng lượng của 1 mét vuông giấy in, thể hiện độ dày mỏng của giấy.
+  unit: g/m²
+  tex: \mathcal{M}\mathscr{i}{\Rho}pp_{content}
+  section: INP.CON
+- code: MATDLB
+  name: Định lượng giấy bìa
+  alias: dinh_luong_giay_bia
+  description: Trọng lượng của 1 mét vuông giấy in bìa, thể hiện độ dày mỏng của giấy.
+  unit: g/m²
+  tex: \mathcal{M}\mathscr{i}{\Rho}pp_{cover}
+  section: INP.COV
+  constraint:
+    min: 0.01
+- code: MATNCLR
+  name: Số màu in ruột
+  alias: so_mau_in_ruot
+  description: Số màu để in ruột sách
+  unit: Đơn vị
+  tex: \mathcal{M}\mathscr{i}Ncl_{content}
+  section: INP.CON
+  constraint:
+    min: 1
+- code: MATNSDR
+  name: Số mặt in ruột
+  alias: so_mat_in_ruot
+  description: Số mặt in ruột
+  unit: Đơn vị
+  tex: \mathcal{M}\mathscr{i}Nsd_{content}
+  option:
+    - 1
+    - 2
+  section: INP.CON
+- code: MATNCLB
+  name: Số màu in bia
+  alias: so_mau_in_bia
+  description: Số màu để in bìa sách
+  unit: Đơn vị
+  tex: \mathcal{M}\mathscr{i}Ncl_{cover}
+  section: INP.COV
+  constraint:
+    min: 1
+- code: MATNSDB
+  name: Số mặt in bìa
+  alias: so_mat_in_bia
+  description: Số mặt in bìa
+  unit: Đơn vị
+  tex: \mathcal{M}\mathscr{i}Nsd_{cover}
+  option:
+    - 1
+    - 2
+  section: INP.COV
+- code: MATKTPL
+  name: Chiều dài khổ thành phẩm
+  alias: chieu_dai_kho_thanh_pham
+  description: Chiều dài của sách sau khi hoàn thiện, đo từ mép trên xuống mép dưới
+  tex: \mathcal{M}\mathscr{i}Sz_{length}
+  unit: cm
+  section: INP.GEN
+- code: MATKTPW
+  name: Chiều rộng khổ thành phẩm
+  alias: chieu_rong_kho_thanh_pham
+  description: Chiều rộng của sách sau khi hoàn thiện, đo từ mép trái sang mép phải.
+  tex: \mathcal{M}\mathscr{i}Sz_{width}
+  unit: cm
+  section: INP.GEN
+- code: MATKBB
+  name: Kiểu bình - Bìa
+  alias: kieu_binh_bia_sach
+  description: Số trang bìa được sắp xếp và in ấn trên một tờ giấy in lớn trước khi cắt thành các trang sách riêng lẻ
+  tex: \mathcal{M}\mathscr{i}Imp_{cover}
+  unit: Đơn vị
+  section: INP.PRT
+  option:
+    - 2
+    - 4
+    - 8
+    - 16
+    - 32
+- code: MATKBR
+  name: Kiểu bình - Ruột
+  alias: kieu_binh_ruot_sach
+  description: Số trang ruột được sắp xếp và in ấn trên một tờ giấy in lớn trước khi cắt thành các trang sách riêng lẻ
+  tex: \mathcal{M}\mathscr{i}Imp_{content}
+  unit: Đơn vị
+  section: INP.PRT
+  option:
+    - 2
+    - 4
+    - 8
+    - 16
+    - 32
+- code: MATTLC
+  name: Tỉ lệ chữ/ảnh trong file in
+  alias: ti_le_chu_tren_anh
+  description: Tỉ lệ số trang chữ / số trang ảnh. Ví dụ có 30 trang chữ và 3 trang ảnh thì tỉ lệ này sẽ là 10.
+  tex: \mathcal{M}\mathscr{i}TI
+  unit: Đơn vị
+  section: INP.OTH
+  constraint:
+    min: 0.01
+- code: MATCC
+  name: Số lượng sản phẩm
+  alias: so_luong_san_pham
+  description: Số lượng sách cần được in ra
+  tex: \mathcal{M}\mathscr{i}C_{copies}
+  unit: Bản
+  section: INP.GEN
+  constraint:
+    min: 1
+- code: MATKMILCOV
+  name: Khổ máy in bìa - dài
+  alias: kho_may_in_bia_dai
+  description: Chiều dài khổ máy in bìa hỗ trợ
+  tex: \mathcal{M}\mathscr{c}PrterCov_{length}
+  unit: cm
+  section: INP.PRT
+  constraint:
+    min: 1
+- code: MATKMIWCOV
+  name: Khổ máy in bia - rộng
+  alias: kho_may_in_bia_rong
+  description: Chiều rộng khổ máy in bìa hỗ trợ
+  tex: \mathcal{M}\mathscr{c}PrterCov_{width}
+  unit: cm
+  section: INP.PRT
+  constraint:
+    min: 1
+- code: MATKMILCON
+  name: Khổ máy in ruột - dài
+  alias: kho_may_in_ruot_dai
+  description: Chiều dài khổ máy in ruột hỗ trợ
+  tex: \mathcal{M}\mathscr{c}PrterCon_{length}
+  unit: cm
+  section: INP.PRT
+  constraint:
+    min: 1
+- code: MATKMIWCON
+  name: Khổ máy in ruột - rộng
+  alias: kho_may_in_ruot_rong
+  description: Chiều rộng khổ máy in ruột hỗ trợ
+  tex: \mathcal{M}\mathscr{c}PrterCon_{width}
+  unit: cm
+  section: INP.PRT
+  constraint:
+    min: 1

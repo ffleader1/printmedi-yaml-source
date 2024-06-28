@@ -1,0 +1,8 @@
+- name: Tốc độ chuẩn bị máy khâu chỉ
+  alias: thoi_gian_chuan_bi_may_khau_chi
+  description: Định mức thời gian chuẩn bị máy khâu chỉ
+  unit: Phút
+- name: Tốc độ hoàn thành công việc khâu chỉ
+  alias: toc_do_khau_chi
+  description: Định mức thời gian hoàn thành công việc - máy khâu chỉ
+  unit: Tờ/Giờ

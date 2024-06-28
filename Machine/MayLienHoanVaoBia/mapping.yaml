@@ -1,0 +1,7 @@
+khau_chi_bia_keo_nhiet:
+  thoi_gian_bat_tay: !custom
+    thoi_gian_chuan_bi_may_lien_hoan_vao_bia: thoi_gian_chuan_bi_bat_tay
+    toc_do_may_lien_hoan_vao_bia: toc_do_bat_tay
+  thoi_gian_vao_bia_xen: !custom
+    thoi_gian_chuan_bi_may_lien_hoan_vao_bia: thoi_gian_chuan_bi_vao_bia_xen
+    toc_do_may_lien_hoan_vao_bia: toc_do_vao_bia_xen

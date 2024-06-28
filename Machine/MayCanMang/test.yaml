@@ -1,0 +1,13 @@
+- name: Thời gian cán màng
+  description:  Công thức tính thời gian cán màng
+  case:
+    - machine:
+        processing: khau_chi_bia_keo_nhiet
+        calculation: thoi_gian_can_mang
+        specification:
+          thoi_gian_chuan_bi_can_mang: 15
+          toc_do_can_mang: 30
+      input:
+        do_dai_mang_bia: 7200
+      output:
+        thoi_gian_can_mang: 255

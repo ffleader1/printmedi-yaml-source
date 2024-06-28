@@ -1,0 +1,8 @@
+- name: Tốc độ in thử
+  alias: toc_do_in_thu
+  description: Tốc độ in thử
+  unit: Trang/phút
+- name: Thời gian chuẩn bị
+  alias: thoi_gian_chuan_bi_in_thu
+  description: Thời gian chuẩn bị
+  unit: Phút

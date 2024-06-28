@@ -1,0 +1,404 @@
+- code: MATSNP
+  name: Tổng số trang sách
+  alias: tong_so_trang_sach
+  description: Tổng số trang sách, gồm số trang bìa và số trang ruột
+  tex: \mathcal{M}\mathscr{i}{\Sigma}pg
+  unit: Trang
+  section: CAL.OTH
+  formula: !fn
+    $so_trang_bia_sach + $so_trang_ruot_sach
+  
+- code: MATGS
+  name: Độ dày gáy sách
+  alias: do_day_gay_sach
+  description: Chiều dài của gáy sách
+  tex: \mathcal{M}\mathscr{c}Bk_{length}
+  unit: cm
+  section: CAL.OTH
+  formula: !fn
+    ($so_trang_ruot_sach * $dinh_luong_giay_ruot * 10^-4) / 2
+- code: MATKIRD
+  name: Khổ tờ in ruột - Chiều dài
+  alias: kho_to_in_ruot_chieu_dai
+  description: Chiều dài của tờ gấy để in ruột sách
+  tex: \mathcal{M}\mathscr{c}SR_{length}
+  unit: cm
+  section: CAL.CON
+  formula: !match
+    comparator: $MATKBR
+    def: "ceil(math::sqrt($MATKBR/2) * ($MATKTPL + 2 * $SHRKCX))"
+    case:
+      - condition: !equal
+          - 4
+          - 16
+        fn: ceil( ($MATKTPW * $MATKBR) / 4 + (math::sqrt($MATKBR) * $SHRKCX) )
+- code: MATKIRR
+  name: Khổ tờ in ruột - Chiều rộng
+  alias: kho_to_in_ruot_chieu_rong
+  description: Chiều rộng của tờ gấy để in ruột sách
+  tex: \mathcal{M}\mathscr{c}SR_{width}
+  unit: cm
+  section: CAL.CON
+  formula: !match
+    comparator: $MATKBR
+    def: "ceil(math::sqrt($MATKBR/2) * ($MATKTPW + $SHRKCX) + $SHRKCN + $SHRKTM)"
+    case:
+      - condition: !equal
+          - 4
+          - 16
+        fn: ceil( math::sqrt($MATKBR) * ($MATKTPL/2  + $SHRKCX) + $SHRKCN + $SHRKTM )
+- code: MATKIBD
+  name: Khổ tờ in bìa - Chiều dài
+  alias: kho_to_in_bia_chieu_dai
+  description: Chiều dài của tờ giấy để in bìa sách
+  tex: \mathcal{M}\mathscr{c}SB_{length}
+  unit: cm
+  section: CAL.COV
+  formula: !match
+    comparator: $MATKBB
+    def: "ceil(math::sqrt($MATKBB/2) * ($MATKTPL + 2* $SHRKCX))"
+    case:
+      - condition: !equal
+          - 4
+          - 16
+        fn: ceil( math::sqrt($MATKBB) * ($do_day_gay_sach/2 + $SHRKCX) + ($MATKTPW * $MATKBB) / 4 )
+- code: MATKIBR
+  name: Khổ tờ in bìa - Chiều rộng
+  alias: kho_to_in_bia_chieu_rong
+  description: Chiều rộng của tờ giấy để in bìa sách
+  tex: \mathcal{M}\mathscr{c}SB_{width}
+  unit: cm
+  section: CAL.COV
+  formula: !match
+    comparator: $MATKBB
+    def: "ceil(math::sqrt($MATKBB/2) * ($MATKTPW + $do_day_gay_sach/2 * $SHRKCX) + $SHRKCN + $SHRKTM)"
+    case:
+      - condition: !equal
+          - 4
+          - 16
+        fn: ceil( math::sqrt($MATKBB) * ($MATKTPL/2  + $SHRKCX) + $SHRKCN + $SHRKTM )
+- code: MATPCR
+  name: Số lượng bản in ruột
+  alias: so_ban_in_ruot
+  description: Số lượng bản in (print copy) thực tế cho phần nội dung bên trong của sản phẩm in, bao gồm tất cả các trang bên trong, không bao gồm bìa.
+  tex: \mathcal{M}\mathscr{c}PC_{content}
+  unit: Đơn vị
+  section: CAL.CON
+  formula: !fn
+    ceil($so_trang_ruot_sach/$kieu_binh_ruot_sach * $so_mau_in_ruot * $so_mat_in_ruot)
+- code: MATPCB
+  name: Số lượng bản in bìa
+  alias: so_ban_in_bia
+  description: Số lượng bản in (print copy) thực tế cho phần bìa của sản phẩm in.
+  tex: \mathcal{M}\mathscr{c}PC_{cover}
+  unit: Đơn vị
+  section: CAL.COV
+  formula: !fn
+    $so_mau_in_bia * $so_mat_in_bia
+#- code: MATPCT
+#  name: Tích số bản in và diện dích
+#  alias: tich_ban_in_dien_tich
+#  description: Tích số bản in và diện dích
+#  tex: \mathcal{M}\mathscr{c}{\Pi}PC
+#  unit: Đơn vị
+#  section: CAL.OTH
+#  formula: !fn
+#    $so_ban_in_bia * $kho_may_in_bia_dai * $kho_may_in_bia_rong + $so_ban_in_ruot * $kho_may_in_ruot_dai * $kho_may_in_ruot_rong
+- code: MATPWB
+  name: Khối lượng giấy in bìa
+  alias: khoi_luong_giay_in_bia
+  description: Công thức tính khối lượng giấy in bìa
+  tex: \mathcal{M}\mathscr{c}PW{cover}
+  unit: Tấn
+  section: CAL.OTH
+  formula: !fn
+    $MATSPB * $MATKIBD * $MATKIBR *MATDLB * 0.0000000001
+- code: MATPWR
+  name: Khối lượng giấy in ruột
+  alias: khoi_luong_giay_in_ruot
+  description: Công thức tính khối lượng giấy in ruột
+  tex: \mathcal{M}\mathscr{c}PW{content}
+  unit: Tấn
+  section: CAL.OTH
+  formula: !fn
+    $MATSPR * $MATKIRD * $MATKIRR *$MATDLR * 0.0000000001
+- code: MATIQR
+  name: Định lượng mực in ruột
+  alias: dinh_luong_muc_in_ruot
+  description: Lượng mực in (tính bằng kg) cần thiết để in 1 triệu trang in với độ phủ mực tiêu chuẩn (thường là 5%)
+  tex: \mathcal{M}\mathscr{c}IQ{cover}
+  unit: kg/1 triệu trang
+  section: CAL.CON
+  formula: !fn
+    round(-0.02 * ($MATNCLR * $MATNCLR) + 2.3 * $MATNCLR +3)
+- code: MATIQB
+  name: Định lượng mực in bìa
+  alias: dinh_luong_muc_in_bia
+  description: Lượng mực in (tính bằng kg) cần thiết để in 1 triệu trang bìa in với độ phủ mực tiêu chuẩn (thường là 5%)
+  tex: \mathcal{M}\mathscr{c}IQ{content}
+  unit: kg/1 triệu trang
+  section: CAL.COV
+  formula: !fn
+    round(-0.02 * ($MATNCLB * $MATNCLB) + 2.3 * $MATNCLB +3)
+- code: MATIWB
+  name: Khối lượng mực in bìa
+  alias: khoi_luong_muc_in_bia
+  description: Khối lượng mực in trang bìa (tính bằng kg) tính theo trang in tiêu chuẩn (13 x 19 cm)
+  tex: \mathcal{M}\mathscr{c}IW{cover}
+  unit: kg
+  section: CAL.COV
+  formula: !fn
+    ceil(($so_trang_bia_sach * $so_luong_san_pham * $he_so_bu_hao * $chieu_dai_kho_thanh_pham * $chieu_rong_kho_thanh_pham * $dinh_luong_muc_in_bia * $so_mat_in_bia) / (13 * 19 * 2 * 10 ^ 6))
+- code: MATIWR
+  name: Khối lượng mực in ruột
+  alias: khoi_luong_muc_in_ruot
+  description: Khối lượng mực in trang ruột (tính bằng kg) tính theo trang in tiêu chuẩn (13 x 19 cm)
+  tex: \mathcal{M}\mathscr{c}IW{content}
+  unit: kg
+  section: CAL.CON
+  formula: !fn
+    ceil(($so_trang_ruot_sach * $so_luong_san_pham * $he_so_bu_hao * $chieu_dai_kho_thanh_pham * $chieu_rong_kho_thanh_pham * $dinh_luong_muc_in_ruot * $so_mat_in_ruot) / (13 * 19 * 2 * 10 ^ 6))
+- code: MATPNB
+  name: Số lượng tờ in bìa
+  alias: so_luong_to_in_bia
+  description: Công thức tính số lượng tờ in bìa
+  tex: \mathcal{M}\mathscr{c}PN{cover}
+  unit: tờ
+  section: CAL.COV
+  formula: !fn
+    ceil($so_luong_san_pham * ($so_trang_bia_sach / $kieu_binh_bia_sach) * $he_so_bu_hao )
+- code: MATPNR
+  name: Số lượng tờ in ruột
+  alias: so_luong_to_in_ruot
+  description: Công thức tính số lượng tờ in ruột
+  tex: \mathcal{M}\mathscr{c}PN{content}
+  unit: tờ
+  section: CAL.CON
+  formula: !fn
+    ceil($so_luong_san_pham * ($so_trang_ruot_sach / $kieu_binh_ruot_sach) * $he_so_bu_hao )
+- code: MATHSKBB
+  name: Hệ số kiểu bình bìa
+  alias: he_so_kieu_binh_bia
+  description: Hệ số kiểu bình bìa
+  tex: \mathcal{M}\mathscr{c}imp_mod{cover}
+  unit: đơn vị
+  section: CAL.COV
+  formula: !fn
+    round(($so_trang_bia_sach/$kieu_binh_bia_sach - floor($so_trang_bia_sach/$kieu_binh_bia_sach)) * 1000)
+- code: MATHSPCB
+  name: Hệ số pha cắt bìa
+  alias: he_so_pha_cat_bia
+  description: Hệ số pha cắt bìa
+  tex: \mathcal{M}\mathscr{c}knife_phase_mod{cover}
+  unit: đơn vị
+  section: CAL.COV
+  formula: !match
+    comparator: $he_so_kieu_binh_bia
+    def: 5
+    case:
+      - condition: !equal
+          - 500
+        fn: 1
+      - condition: !equal
+          - 250
+        fn: 3
+      - condition: !equal
+          - 125
+        fn: 7
+      - condition: !equal
+          - 750
+        fn: 1 + 3
+      - condition: !equal
+          - 625
+        fn: 1 + 7
+      - condition: !equal
+          - 375
+        fn: 3 + 7
+      - condition: !equal
+          - 875
+        fn: 1 + 3 + 7
+- code: MATHSKBR
+  name: Hệ số kiểu bình ruột
+  alias: he_so_kieu_binh_ruot
+  description: Hệ số kiểu bình bìa
+  tex: \mathcal{M}\mathscr{c}imp_mod{content}
+  unit: đơn vị
+  section: CAL.CON
+  formula: !fn
+    round(($so_trang_ruot_sach/$kieu_binh_ruot_sach - floor($so_trang_ruot_sach/$kieu_binh_ruot_sach)) * 1000)
+- code: MATHSPCR
+  name: Hệ số pha cắt ruột
+  alias: he_so_pha_cat_ruot
+  description: Hệ số pha cắt ruột
+  tex: \mathcal{M}\mathscr{c}knife_phase_mod{content}
+  unit: đơn vị
+  section: CAL.CON
+  formula: !match
+    comparator: $he_so_kieu_binh_ruot
+    def: 0.5
+    case:
+      - condition: !equal
+          - 500
+        fn: 1 * 0.5
+      - condition: !equal
+          - 250
+        fn: 3 * 0.25
+      - condition: !equal
+          - 125
+        fn: 7 * 0.125
+      - condition: !equal
+          - 750
+        fn: 1 * 0.5 + 3 * 0.25
+      - condition: !equal
+          - 625
+        fn: 1 * 0.5 + 7 * 0.125
+      - condition: !equal
+          - 375
+        fn: 3 * 0.25 + 7 * 0.125
+      - condition: !equal
+          - 875
+        fn: 1 * 0.5 + 3 * 0.25 + 7 * 0.125
+- code: MATMBW
+  name: Khổ màng bìa
+  alias: kho_mang_bia
+  description: Công thức tính khổ màng bìa
+  tex: \mathcal{M}\mathscr{c}Fl{width}
+  unit: cm
+  section: CAL.OTH
+  formula: !fn
+    $kho_to_in_bia_chieu_rong - $khoang_cach_chua_tay_ke - $khoang_cach_thang_mau + 0.4
+- code: MATMBL
+  name: Độ dài màng bìa
+  alias: do_dai_mang_bia
+  description: Công thức tính độ dài màng bìa
+  tex: \mathcal{M}\mathscr{c}Fl{length}
+  unit: m
+  section: CAL.OTH
+  formula: !fn
+    $kho_to_in_bia_chieu_dai * $so_luong_to_in_bia * 0.01
+- code: MATDTMB
+  name: Diện tích màng bìa
+  alias: dien_tich_mang_bia
+  description: Công thức tính tổng diện tích sử dụng màng bìa
+  tex: \mathcal{M}\mathscr{c}Fl{length}
+  unit: cm²
+  section: CAL.OTH
+  formula: !fn
+    $kho_mang_bia * $do_dai_mang_bia * 10 ^ 2
+- code: MATPRCG
+  name: Chi phí giấy
+  alias: chi_phi_giay
+  description: Công thức tính chi phí giấy
+  tex: \mathcal{M}\mathscr{c}Prc{paper}
+  unit: VNĐ
+  section: CAL.OTH
+  formula: !fn
+    ceil(($khoi_luong_giay_in_bia + $khoi_luong_giay_in_ruot) * $don_gia_giay )
+- code: MATPRCBI
+  name: Chi phí bản in
+  alias: chi_phi_ban_in
+  description: Công thức tính chi phí bản in
+  tex: \mathcal{M}\mathscr{c}Prc{impression}
+  unit: VNĐ
+  section: CAL.OTH
+  formula: !fn
+    ceil(($so_ban_in_bia * $kho_may_in_bia_dai * $kho_may_in_bia_rong + $so_ban_in_ruot * $kho_may_in_ruot_dai * $kho_may_in_ruot_rong) * $don_gia_ban )
+- code: MATPRCMI
+  name: Chi phí mực in
+  alias: chi_phi_muc_in
+  description: Công thức tính chi phí mực in
+  tex: \mathcal{M}\mathscr{c}Prc{ink}
+  unit: VNĐ
+  section: CAL.OTH
+  formula: !fn
+    ceil(($so_ban_in_bia * $khoi_luong_muc_in_bia + $so_ban_in_ruot * $khoi_luong_muc_in_ruot) * $don_gia_muc)
+- code: MATPRCMB
+  name: Chi phí màng bìa
+  alias: chi_phi_mang_bia
+  description: Công thức tính chi phí màng bìa
+  tex: \mathcal{M}\mathscr{c}Prc{film}
+  unit: VNĐ
+  section: CAL.OTH
+  formula: !fn
+    ceil($dien_tich_mang_bia * $don_gia_mang_bia)
+- code: MATPRCVL
+  name: Chi phí nguyên vật liệu
+  alias: chi_phi_nguyen_vat_lieu
+  description: Công thức tính chi phí nguyên vật liệu
+  tex: \mathcal{M}\mathscr{c}Prc{material}
+  unit: VNĐ
+  section: CAL.SUM
+  formula: !fn
+    ceil($chi_phi_giay + $chi_phi_ban_in + $chi_phi_muc_in + $chi_phi_mang_bia )
+- code: MATPRCCB
+  name: Chi phí chế bản
+  alias: chi_phi_che_ban
+  description: Công thức tính chi phí chế bản
+  tex: \mathcal{M}\mathscr{c}Prc{engraving}
+  unit: VNĐ
+  section: CAL.OTH
+  formula: !fn
+    ceil($don_gia_che_ban * ($so_ban_in_bia * $kho_may_in_bia_dai * $kho_may_in_bia_rong + $so_ban_in_ruot * $kho_may_in_ruot_dai * $kho_may_in_ruot_rong))
+- code: MATPRCBS
+  name: Chi phí in bìa sách
+  alias: chi_phi_bia_sach
+  description: Công thức tính chi phí in bìa sách
+  tex: \mathcal{M}\mathscr{c}Prc{cover}
+  unit: VNĐ
+  section: CAL.OTH
+  formula: !fn
+    $so_ban_in_bia * $don_gia_in_x_luot_dau + ($so_luong_to_in_bia - 1000) * $don_gia_in_x_luot_sau * $so_mau_in_bia
+- code: MATPRCRS
+  name: Chi phí in ruột sách
+  alias: chi_phi_ruot_sach
+  description: Công thức tính chi phí in ruột sách
+  tex: \mathcal{M}\mathscr{c}Prc{content}
+  unit: VNĐ
+  section: CAL.OTH
+  formula: !fn
+    $so_ban_in_ruot * $don_gia_in_x_luot_dau + ($so_luong_to_in_ruot - $so_ban_in_ruot * 1000) * $don_gia_in_x_luot_sau * $so_mau_in_ruot * $so_mat_in_ruot
+- code: MATPRCGC
+  name: Chi phí gia công
+  alias: chi_phi_gia_cong
+  description: Công thức tính chi phí gia công
+  tex: \mathcal{M}\mathscr{c}Prc{manufacture}
+  unit: VNĐ
+  section: CAL.OTH
+  formula: !fn
+    ceil($so_trang_ruot_sach * $so_luong_san_pham * $don_gia_gia_cong_sach)
+- code: MATPRCSX
+  name: Chi phí sản xuất
+  alias: chi_phi_san_xuat
+  description: Công thức tính tổng chi phí sản xuất
+  tex: \mathcal{M}\mathscr{c}Prc{production}
+  unit: VNĐ
+  section: CAL.SUM
+  formula: !fn
+    ceil($chi_phi_che_ban + $chi_phi_bia_sach + $chi_phi_ruot_sach + $chi_phi_gia_cong)
+- code: MATPRCDH
+  name: Chi phí đơn hàng
+  alias: chi_phi_don_hang
+  description: Công thức tính tổng chi phí đơn hàng
+  tex: \mathcal{M}\mathscr{c}Prc{order}
+  unit: VNĐ
+  section: CAL.SUM
+  formula: !fn
+    ceil($chi_phi_nguyen_vat_lieu + $chi_phi_san_xuat)
+- code: MATPRSIN
+  name: Đơn giá một sản phẩm
+  alias: don_gia_san_pham
+  description: Đơn giá trung bình cho một sản phẩm
+  tex: \mathcal{M}\mathscr{c}Prc{single}
+  unit: VNĐ
+  section: CAL.SUM
+  formula: !fn
+    ceil($chi_phi_don_hang / $so_luong_san_pham)
+#- code: MATPCTT
+#  name: Tổng số lượng bản in test
+#  alias: tong_so_ban_in
+#  description: Tổng số lượng bản in bìa và ruột.
+#  tex: \mathcal{M}\mathscr{c}{\Sigma}PC
+#  unit: Đơn vị
+#  section: CAL.OTH
+#  formula: !fn
+#    $so_ban_in_bia + $so_ban_in_ruot

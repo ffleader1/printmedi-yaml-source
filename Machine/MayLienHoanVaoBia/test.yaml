@@ -1,0 +1,13 @@
+- name: Thời gian bắt tay sách
+  description: Thời gian bắt tay sách
+  case:
+    - machine:
+        processing: khau_chi_bia_keo_nhiet
+        calculation: thoi_gian_bat_tay
+        specification:
+          toc_do_may_lien_hoan_vao_bia: 5000
+          thoi_gian_chuan_bi_may_lien_hoan_vao_bia: 10
+      input:
+        so_luong_san_pham: 2500
+      output:
+        thoi_gian_bat_tay: 25

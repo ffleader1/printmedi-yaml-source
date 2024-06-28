@@ -1,0 +1,8 @@
+- name: Tốc độ hoàn thành công việc gấp sách
+  alias: toc_do_gap_sach
+  description: Định mức thời gian hoàn thành công việc - máy gấp sách
+  unit: Tay sách/Phút
+- name: Tốc độ chuẩn bị máy gấp sách
+  alias: thoi_gian_chuan_bi_may_gap_sach
+  description: Định mức thời gian chuẩn bị máy gấp sách.
+  unit: Phút

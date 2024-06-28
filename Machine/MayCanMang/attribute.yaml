@@ -1,0 +1,8 @@
+- name: Thời gian chuẩn bị máy cán màng
+  alias: thoi_gian_chuan_bi_can_mang
+  description: Thời gian chuẩn bị máy cán màng
+  unit: Phút
+- name: Tốc độ cán màng
+  alias: toc_do_can_mang
+  description: Tốc độ hoàn thành công việc cán màng
+  unit: m/Phút

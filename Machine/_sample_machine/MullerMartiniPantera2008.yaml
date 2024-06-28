@@ -1,0 +1,13 @@
+general:
+  name: Muller Martini Pantera 2008
+  machine_type: may_lien_hoan_vao_bia
+  description: |
+    Muller Martini Pantera là một dòng máy liên hoàn vào bìa (perfect binder) 
+    rất phổ biến trong ngành in. Nó có khả năng thực hiện nhiều công đoạn liên tục 
+    trong quy trình vào bìa sách, từ việc xén bìa, cấn bìa, bồi bìa vào ruột sách, 
+    đến việc hoàn thiện gáy sách.
+  serial: Mull-8jd7b
+  brand: Muller Martini
+attribute:
+  toc_do_may_lien_hoan_vao_bia: 10000
+  thoi_gian_chuan_bi_may_lien_hoan_vao_bia: 10

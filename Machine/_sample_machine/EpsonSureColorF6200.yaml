@@ -1,0 +1,9 @@
+general:
+  name: Epson SureColor F6200
+  machine_type: may_in_ky_thuat_so
+  description: Epson SureColor F6200 là máy in phun khổ lớn sử dụng công nghệ in chuyển nhiệt, lý tưởng cho các ứng dụng in ấn đòi hỏi chất lượng hình ảnh cao và độ chính xác màu sắc. Máy in này được thiết kế để đáp ứng nhu cầu sản xuất công nghiệp với tốc độ in nhanh chóng và độ bền cao.
+  serial: EFGH-5678
+  brand: Epson
+attribute:
+  toc_do_in_thu: 200
+  thoi_gian_chuan_bi_in_thu: 5

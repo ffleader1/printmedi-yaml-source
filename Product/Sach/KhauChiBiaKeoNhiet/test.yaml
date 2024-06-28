@@ -1,0 +1,724 @@
+- name: Tính tổng số trang sách
+  case:
+    - input:
+        so_trang_bia_sach: 4
+        so_trang_ruot_sach: 60
+      output:
+        tong_so_trang_sach: 64
+- name: Tính chiều dài gáy sách
+  alias: tinh_do_day_gay_sach
+  case:
+    - input:
+        so_trang_ruot_sach: 200
+        dinh_luong_giay_ruot: 70
+      output:
+        do_day_gay_sach: 0.7
+- name: Tính khổ tờ in ruột
+  description: Bao gồm chiều dài và chiều rộng của khổ tờ in ruột
+  case:
+    - input:
+        MATKTPL: 20.5
+        MATKTPW: 14.5
+        MATKBR: 32
+      output:
+        MATKIRD: 85
+      note: Chiều dài cho kiểu bình 2, 8 hoặc 32
+    - input:
+        MATKTPL: 20.5
+        MATKTPW: 14.5
+        MATKBR: 16
+        SHRKCN: 2
+      output:
+        MATKIRD: 60
+      note: Chiều dài cho kiểu bình 4 hoặc 16
+    - input:
+        MATKTPL: 20.5
+        MATKTPW: 14.5
+        MATKBR: 8
+      output:
+        MATKIRR: 32
+      note: Chiều rộng cho kiểu bình 2, 8 hoặc 32
+    - input:
+        MATKTPL: 20.5
+        MATKTPW: 14.5
+        MATKBR: 4
+      output:
+        MATKIRR: 24
+      note: Chiều rộng cho kiểu bình 4 hoặc 16
+- name: Tính khổ tờ in bìa
+  alias: test_kho_to_in_bia
+  description: Bao gồm chiều dài và chiều rộng của khổ tờ in bìa
+  case:
+    - input:
+        MATKTPL: 20.5
+        MATKBB: 32
+      output:
+        MATKIBD: 85
+      note: Chiều dài cho kiểu bình 2, 8 hoặc 32
+    - input:
+        MATKTPW: 14.5
+        MATGS: 0.7
+        MATKBB: 16
+      output:
+        MATKIBD: 61
+      note: Chiều dài cho kiểu bình 4 hoặc 16
+    - input:
+        MATKTPW: 14.5
+        MATKBB: 8
+        MATGS: 0.7
+      output:
+        MATKIBR: 32
+      note: Chiều rộng cho kiểu bình 2, 8 hoặc 32
+    - input:
+        MATKTPL: 20.5
+        MATKBB: 4
+      output:
+        kho_to_in_bia_chieu_rong: 24
+      note: Chiều rộng cho kiểu bình 4 hoặc 16
+- name: Tính số lượng bản in
+  description: Bao gồm bản in bìa và bản in ruột
+  case:
+    - input:
+        so_trang_ruot_sach: 239
+        kieu_binh_ruot_sach: 32
+        so_mau_in_ruot: 2
+        so_mat_in_ruot: 2
+      output:
+        so_ban_in_ruot: 30
+      note: Số lượng bản in ruột
+    - input:
+        so_mau_in_bia: 8
+        so_mat_in_bia: 2
+      output:
+        so_ban_in_bia: 16
+      note: Số lượng bản in bìa
+#- name: Tính tích số bản in và diện dích
+#  description: tích số bản in và diện dích
+#  case:
+#    - input:
+#        so_ban_in_bia: 50
+#        kho_may_in_bia_dai: 102
+#        kho_may_in_bia_rong: 72
+#        so_ban_in_ruot: 160
+#        kho_may_in_ruot_dai: 104
+#        kho_may_in_ruot_rong: 74
+#      output:
+#        tich_ban_in_dien_tich: 30
+- name: Tính thời gian kiểm tra file khách hàng
+  alias: tinh_thoi_gian_kiem_tra_file_khach
+  description: Bao gồm thời gian sửa lỗi, kiểm tra file chữ và thời gian xử lý, kiểm tra file ảnh
+  case:
+    - input:
+        so_trang_bia_sach: 4
+        so_trang_ruot_sach: 100
+        ti_le_chu_tren_anh: 6
+        nang_luc_kiem_tra_chu: 10
+        nhan_luc_kiem_tra_chu: 2
+        nang_luc_kiem_tra_anh: 2
+        nhan_luc_kiem_tra_anh: 2
+      output:
+        thoi_gian_kiem_tra_chu: 18
+        thoi_gian_kiem_tra_anh: 15
+- name: Tính thời gian dàn trang
+  description: Tính thời gian dàn trang
+  case:
+    - input:
+        so_trang_bia_sach: 4
+        so_trang_ruot_sach: 56
+        nang_luc_dan_trang: 4
+      output:
+        thoi_gian_dan_trang: 240
+- name: Tính thời gian bình bản
+  description: Tính thời gian bình bản
+  case:
+    - input:
+        dinh_muc_thoi_gian_binh_ban: 20
+      output:
+        thoi_gian_binh_ban: 20
+- name: Tính thời gian in thử
+  description: Tính thời gian bình bản
+  case:
+    - input:
+        so_trang_ruot_sach: 320
+        kieu_binh_ruot_sach: 32
+        so_mat_in_ruot: 2
+        so_mat_in_bia: 1
+        toc_do_in_thu: 7
+        thoi_gian_chuan_bi_in_thu: 15
+      output:
+        thoi_gian_in_thu: 18
+- name: Tính thời gian RIP
+  description: Tính thời gian RIP
+  case:
+    - input:
+        so_trang_ruot_sach: 320
+        kieu_binh_ruot_sach: 16
+        so_mat_in_ruot: 2
+        so_mat_in_bia: 2
+        toc_do_rip: 7
+      output:
+        thoi_gian_rip: 294
+- name: Tính thời gian ghi, hiện bản
+  description: Tính thời gian ghi, hiện bản
+  case:
+    - input:
+        so_ban_in_ruot: 2
+        so_ban_in_bia: 22
+        toc_do_ghi_hien_ban: 6
+      output:
+        thoi_gian_ghi_hien_ban: 144
+- name: Thời gian chế bản khác
+  description: Thời gian chế bản khác
+  case:
+    - input:
+        thoi_gian_che_ban_khac: 10
+      output:
+        thoi_gian_che_ban_khac_kq: 10
+- name: Tổng thời gian chế bản
+  alias: tinh_tong_thoi_gian_che_ban
+  description: Tính tổng thời gian chế bản
+  case:
+    - input:
+        thoi_gian_kiem_tra_chu: 30
+        thoi_gian_kiem_tra_anh: 30
+        thoi_gian_dan_trang: 20
+        thoi_gian_binh_ban: 22
+        thoi_gian_in_thu: 18
+        thoi_gian_rip: 20
+        thoi_gian_ghi_hien_ban: 20
+        thoi_gian_che_ban_khac_kq: 10
+      need_calculate:
+        - thoi_gian_kiem_tra_chu
+        - thoi_gian_kiem_tra_anh
+        - thoi_gian_dan_trang
+        - thoi_gian_binh_ban
+        - thoi_gian_in_thu
+        - thoi_gian_rip
+        - thoi_gian_ghi_hien_ban
+        - thoi_gian_che_ban_khac_kq
+      output:
+        tong_thoi_gian_che_ban: 170
+    - input:
+        thoi_gian_in_thu: 18
+        thoi_gian_che_ban_khac_kq: 10
+      need_calculate:
+        - thoi_gian_in_thu
+      output:
+        tong_thoi_gian_che_ban: 18
+- name: Khối lượng giấy in bìa
+  description: Tính khối lượng giấy in bìa
+  case:
+    - input:
+        so_trang_bia_sach: 2
+        kho_to_in_bia_chieu_dai: 10
+        kho_to_in_bia_chieu_rong: 20
+        dinh_luong_giay_bia: 100000
+      output:
+        khoi_luong_giay_in_bia: 0.004
+- name: Khối lượng giấy in ruột
+  description: Tính khối lượng giấy in ruột
+  case:
+    - input:
+        so_trang_ruot_sach: 200
+        kho_to_in_ruot_chieu_dai: 20
+        kho_to_in_ruot_chieu_rong: 20
+        dinh_luong_giay_ruot: 20000
+      output:
+        khoi_luong_giay_in_ruot: 0.16
+- name: Định lượng mực in bìa
+  description: Tính định lượng mực in bìa
+  case:
+    - input:
+        so_mau_in_bia: 1
+      output:
+        dinh_luong_muc_in_bia: 5
+- name: Định lượng mực in ruột
+  description: Tính định lượng mực in ruột
+  case:
+    - input:
+        so_mau_in_ruot: 2
+      output:
+        dinh_luong_muc_in_ruot: 8
+- name: Khối lượng mực in bìa
+  description: Tính khối lượng mực in bìa
+  case:
+    - input:
+        so_trang_bia_sach: 2
+        so_luong_san_pham: 10000000
+        he_so_bu_hao: 0.5
+        chieu_dai_kho_thanh_pham: 20
+        chieu_rong_kho_thanh_pham: 20
+        dinh_luong_muc_in_bia: 5
+        so_mat_in_bia: 1
+      output:
+        khoi_luong_muc_in_bia: 41
+- name: Khối lượng mực in ruột
+  description: Tính khối lượng mực in ruột
+  case:
+    - input:
+        so_trang_ruot_sach: 200
+        so_luong_san_pham: 10000000
+        he_so_bu_hao: 0.5
+        chieu_dai_kho_thanh_pham: 20
+        chieu_rong_kho_thanh_pham: 20
+        dinh_luong_muc_in_ruot: 8
+        so_mat_in_ruot: 2
+      output:
+        khoi_luong_muc_in_ruot: 12956
+- name: Số lượng tờ in bìa
+  description: Tính Số lượng tờ in bìa
+  case:
+    - input:
+        so_luong_san_pham: 10000000
+        so_trang_bia_sach: 5
+        kieu_binh_bia_sach: 4
+        he_so_bu_hao: 0.5
+      output:
+        so_luong_to_in_bia: 6250000
+- name: Số lượng tờ in ruột
+  description: Tính Số lượng tờ in ruột
+  case:
+    - input:
+        so_luong_san_pham: 10000000
+        so_trang_ruot_sach: 300
+        kieu_binh_ruot_sach: 4
+        he_so_bu_hao: 0.5
+      output:
+        so_luong_to_in_ruot: 375000000
+- name: Hệ số kiểu bình bìa
+  description: Tính hệ số kiểu bình bìa
+  case:
+    - input:
+        so_trang_bia_sach: 1950
+        kieu_binh_bia_sach: 8
+      output:
+        he_so_kieu_binh_bia: 750
+    - input:
+        so_trang_bia_sach: 2000
+        kieu_binh_bia_sach: 4
+      output:
+        he_so_kieu_binh_bia: 0
+- name: Hệ số pha cắt bìa
+  alias: tinh_he_so_pha_cat_bia
+  description: Tính hệ số pha cắt bìa
+  case:
+    - input:
+        so_trang_bia_sach: 1000
+        kieu_binh_bia_sach: 16
+      output:
+        #        he_so_kieu_binh_bia: 500
+        he_so_pha_cat_bia: 1
+#    - input:
+#        so_trang_bia_sach: 3500
+#        kieu_binh_bia_sach: 32
+#      output:
+#        he_so_pha_cat_bia: 10
+- name: Hệ số kiểu bình ruột
+  description: Tính hệ số kiểu bình ruột
+  case:
+    - input:
+        so_trang_ruot_sach: 1400
+        kieu_binh_ruot_sach: 16
+      output:
+        he_so_kieu_binh_ruot: 500
+    - input:
+        so_trang_ruot_sach: 3100
+        kieu_binh_ruot_sach: 32
+      output:
+        he_so_kieu_binh_ruot: 875
+- name: Hệ số pha cắt ruột
+  description: Tính hệ số pha cắt ruột
+  case:
+    - input:
+        so_trang_ruot_sach: 1500
+        kieu_binh_ruot_sach: 16
+      output:
+        he_so_pha_cat_ruot: 1.25
+    - input:
+        so_trang_ruot_sach: 3500
+        kieu_binh_ruot_sach: 32
+      output:
+        he_so_pha_cat_ruot: 1.625
+- name: Thời gian in bìa
+  description: Tính Số lượng tờ in bìa
+  case:
+    - input:
+        so_luong_to_in_bia: 1000
+        so_mau_in_bia: 4
+        so_mau_may_in_bia_ho_tro: 4
+        so_mat_in_bia: 1
+        toc_do_may_in_bia_ho_tro: 500
+        so_mat_may_in_bia_ho_tro: 2
+      output:
+        thoi_gian_in_bia: 60
+- name: Thời gian in ruột
+  description: Tính Số lượng tờ in ruột
+  case:
+    - input:
+        so_luong_to_in_ruot: 10000
+        so_mau_in_ruot: 2
+        so_mau_may_in_ruot_ho_tro: 4
+        so_mat_in_ruot: 2
+        toc_do_may_in_ruot_ho_tro: 500
+        so_mat_may_in_ruot_ho_tro: 2
+      output:
+        thoi_gian_in_ruot: 1200
+- name: Thời gian in khác
+  description: Thời gian in khác
+  case:
+    - input:
+        thoi_gian_in_khac: 30
+      output:
+        thoi_gian_in_khac_kq: 30
+- name: Tổng thời gian in
+  alias: tinh_tong_thoi_gian_in
+  description: Tính tổng thời gian in
+  case:
+    - input:
+        thoi_gian_in_bia: 30
+        thoi_gian_in_ruot: 3000
+        thoi_gian_in_khac_kq: 20
+      need_calculate:
+        - thoi_gian_in_bia
+        - thoi_gian_in_ruot
+        - thoi_gian_in_khac_kq
+      output:
+        tong_thoi_gian_in: 3050
+    - input:
+        thoi_gian_in_bia: 30
+        thoi_gian_in_ruot: 3000
+        thoi_gian_in_khac_kq: 20
+      need_calculate:
+        - thoi_gian_in_bia
+        - thoi_gian_in_ruot
+      output:
+        tong_thoi_gian_in: 3030
+- name: Khổ màng bìa
+  description: Công thức tính khổ màng bìa
+  case:
+    - input:
+        kho_to_in_bia_chieu_rong: 20
+      output:
+        kho_mang_bia: 18.4
+- name: Độ dài màng bìa
+  description: Công thức tính độ dài màng bìa
+  case:
+    - input:
+        kho_to_in_bia_chieu_dai: 20
+        so_luong_to_in_bia: 20
+      output:
+        do_dai_mang_bia: 4
+- name: Diện tích màng bìa
+  description: Công thức tính tổng diện tích sử dụng màng bìa
+  case:
+    - input:
+        kho_mang_bia: 18.4
+        do_dai_mang_bia: 4
+      output:
+        dien_tich_mang_bia: 7360
+- name: Chi phí giấy
+  description: Công thức tính chi phí giấy
+  case:
+    - input:
+        khoi_luong_giay_in_bia: 0.02
+        khoi_luong_giay_in_ruot: 0.01
+      output:
+        chi_phi_giay: 630000
+- name: Chi phí bản in
+  description: Công thức tính chi phí bản in
+  case:
+    - input:
+        so_ban_in_bia: 2
+        kho_may_in_bia_dai: 102
+        kho_may_in_bia_rong: 72
+        so_ban_in_ruot: 18
+        kho_may_in_ruot_dai: 102
+        kho_may_in_ruot_rong: 72
+        don_gia_ban: 8
+      output:
+        chi_phi_ban_in: 1175040
+- name: Chi phí mực in
+  description: Công thức tính chi phí mực in
+  case:
+    - input:
+        so_ban_in_bia: 200
+        so_ban_in_ruot: 200
+        khoi_luong_muc_in_bia: 0.002
+        khoi_luong_muc_in_ruot: 0.001
+      output:
+        chi_phi_muc_in: 72001
+- name: Chi phí màng bìa
+  description: Công thức tính chi phí màng bìa
+  case:
+    - input:
+        dien_tich_mang_bia: 7360
+      output:
+        chi_phi_mang_bia: 2208
+- name: Chi phí nguyên vật liệu
+  description: Công thức tính chi phí nguyên vật liệu
+  case:
+    - input:
+        chi_phi_giay: 630000
+        chi_phi_ban_in: 11750400
+        chi_phi_muc_in: 72000
+        chi_phi_mang_bia: 441600
+      output:
+        chi_phi_nguyen_vat_lieu: 12894000
+- name: Chi phí chế bản
+  description: Công thức tính chi phí chế bản
+  case:
+    - input:
+        so_ban_in_bia: 5
+        kho_may_in_bia_dai: 102
+        kho_may_in_bia_rong: 72
+        so_ban_in_ruot: 16
+        kho_may_in_ruot_dai: 104
+        kho_may_in_ruot_rong: 74
+      output:
+        chi_phi_che_ban: 12788480
+- name: Chi phí in bìa sách
+  description: Công thức tính chi phí in bìa sách
+  case:
+    - input:
+        so_ban_in_bia: 150
+        so_luong_to_in_bia: 300
+        so_mau_in_bia: 5
+      output:
+        chi_phi_bia_sach: 37220000
+- name: Chi phí in ruột sách
+  description: Công thức tính chi phí in ruột sách
+  case:
+    - input:
+        so_ban_in_ruot: 300
+        so_luong_to_in_ruot: 1200
+        so_mau_in_ruot: 1
+        so_mat_in_ruot: 2
+      output:
+        chi_phi_ruot_sach: 27192000
+- name: Chi phí gia công
+  description: Công thức tính chi phí gia công
+  case:
+    - input:
+        so_trang_ruot_sach: 63
+        so_luong_san_pham: 1000
+      output:
+        chi_phi_gia_cong: 5040000
+- name: Chi phí sản xuất
+  description: Công thức tính chi phí sản xuất
+  case:
+    - input:
+        chi_phi_che_ban: 4700160
+        chi_phi_bia_sach: 37220000
+        chi_phi_ruot_sach: 27192000
+        chi_phi_gia_cong: 5040000
+      output:
+        chi_phi_san_xuat: 74152160
+- name: Chi phí đơn hàng
+  description: Công thức tính tổng chi phí đơn hàng
+  case:
+    - input:
+        chi_phi_nguyen_vat_lieu: 12894000
+        chi_phi_san_xuat: 74152160
+      output:
+        chi_phi_don_hang: 87046160
+- name: Đơn giá một sản phẩm
+  description: Tính đơn giá một sản phẩm
+  case:
+    - input:
+        chi_phi_don_hang: 2500000
+        so_luong_san_pham: 500
+      output:
+        don_gia_san_pham: 5000
+- name: Thời gian cán màng
+  description: Công thức tính thời gian cán màng
+  case:
+    - input:
+        thoi_gian_chuan_bi_can_mang: 15
+        do_dai_mang_bia: 7200
+        toc_do_can_mang: 30
+      output:
+        thoi_gian_can_mang: 255
+- name: Thời gian pha cắt bìa
+  alias: tinh_thoi_gian_pha_cat_bia_sach
+  description: Tính thời gian pha cắt bìa sách
+  case:
+    - input:
+        so_luong_to_in_bia: 2500
+        dinh_luong_giay_bia: 300
+        chieu_cao_chong_cat_bia: 50
+        toc_do_cat_mot_nhat_bia: 1.5
+        he_so_pha_cat_bia: 3
+      output:
+        thoi_gian_pha_cat_bia: 9
+- name: Thời gian pha cắt bìa
+  alias: tinh_thoi_gian_pha_cat_ruot_sach
+  description: Tính thời gian pha cắt bìa sách
+  case:
+    - input:
+        so_luong_to_in_ruot: 52500
+        dinh_luong_giay_ruot: 200
+        chieu_cao_chong_cat_ruot: 50
+        toc_do_cat_mot_nhat_ruot: 1.2
+        he_so_pha_cat_ruot: 1.25
+      output:
+        thoi_gian_pha_cat_ruot: 32
+- name: Thời gian gấp sách
+  description: Tính thời gian gấp sách
+  case:
+    - input:
+        so_luong_to_in_ruot: 300
+        toc_do_gap_sach: 60
+        so_trang_ruot_sach: 600
+        kieu_binh_ruot_sach: 2
+        thoi_gian_chuan_bi_may_gap_sach: 1
+      output:
+        thoi_gian_gap_sach: 600
+- name: Thời gian bắt tay sách
+  description: Thời gian bắt tay sách, vào bìa, xén 3 mặt
+  case:
+    - input:
+        so_luong_san_pham: 2500
+        toc_do_bat_tay: 5000
+        thoi_gian_chuan_bi_bat_tay: 10
+      output:
+        thoi_gian_bat_tay: 25
+- name: Thời gian khâu chỉ
+  description: Tính thời gian khâu chỉ sách
+  case:
+    - input:
+        so_luong_san_pham: 250
+        toc_do_khau_chi: 20
+        so_trang_ruot_sach: 600
+        kieu_binh_ruot_sach: 2
+        thoi_gian_chuan_bi_may_khau_chi: 1
+      output:
+        thoi_gian_khau_chi: 1876
+- name: Thời gian vào bìa, xén 3 mặt
+  description: Thời gian bắt tay sách, vào bìa, xén 3 mặt
+  case:
+    - input:
+        so_luong_san_pham: 2500
+        toc_do_vao_bia_xen: 5000
+        thoi_gian_chuan_bi_vao_bia_xen: 10
+      output:
+        thoi_gian_vao_bia_xen: 25
+- name: Thời gian đóng gói
+  description: Thời gian đóng gói
+  case:
+    - input:
+        so_luong_san_pham: 2500
+        toc_do_dong_goi: 1
+        so_sach_moi_goi: 30
+        so_nhan_cong_dong_goi: 2
+      output:
+        thoi_gian_dong_goi: 54
+- name: Thời gian hoàn thiện khác
+  description: Thời gian hoàn thiện khác
+  case:
+    - input:
+        thoi_gian_hoan_thien_khac: 55
+      output:
+        thoi_gian_hoan_thien_khac_kq: 55
+- name: Tổng thời gian hoàn thiện
+  alias: tinh_tong_thoi_gian_hoan_thien
+  description: Tính tổng thời gian hoàn thiện
+  case:
+    - input:
+        thoi_gian_can_mang: 30
+        thoi_gian_pha_cat_bia: 10
+        thoi_gian_pha_cat_ruot: 50
+        thoi_gian_gap_sach: 15
+        thoi_gian_bat_tay: 25
+        thoi_gian_khau_chi: 25
+        thoi_gian_vao_bia_xen: 40
+        thoi_gian_dong_goi: 35
+        thoi_gian_hoan_thien_khac_kq: 90
+      need_calculate:
+        - thoi_gian_can_mang
+        - thoi_gian_pha_cat_bia
+        - thoi_gian_pha_cat_ruot
+        - thoi_gian_gap_sach
+        - thoi_gian_bat_tay
+        - thoi_gian_khau_chi
+        - thoi_gian_vao_bia_xen
+        - thoi_gian_dong_goi
+        - thoi_gian_hoan_thien_khac_kq
+      output:
+        tong_thoi_gian_hoan_thien: 320
+    - input:
+        thoi_gian_can_mang: 30
+        thoi_gian_pha_cat_bia: 10
+        thoi_gian_pha_cat_ruot: 50
+        thoi_gian_gap_sach: 15
+        thoi_gian_bat_tay: 25
+      need_calculate:
+        - thoi_gian_can_mang
+        - thoi_gian_pha_cat_bia
+        - thoi_gian_pha_cat_ruot
+      output:
+        tong_thoi_gian_hoan_thien: 90
+- name: Tổng thời gian sản xuất
+  alias: tinh_tong_thoi_gian_san_xuat
+  description: Tính tổng thời gian Sản xuất
+  case:
+    - input:
+        tong_thoi_gian_che_ban: 300
+        tong_thoi_gian_in: 800
+        tong_thoi_gian_hoan_thien: 500
+      output:
+        tong_thoi_gian_san_xuat: 1600
+- name: Đơn Mẫu Khâu Chỉ Bìa Keo Nhiệt 1
+  alias: don_mau_1
+  description: Đơn mẫu khâu chỉ bìa keo nhiệt
+  feature: true
+  case:
+    - input:
+        chieu_rong_kho_thanh_pham: 14.5
+        chieu_dai_kho_thanh_pham: 20.5
+        so_luong_san_pham: 20000
+        so_trang_bia_sach: 4
+        so_mau_in_bia: 6
+        so_mat_in_bia: 1
+        dinh_luong_giay_bia: 300
+        kieu_binh_bia_sach: 32
+        so_trang_ruot_sach: 250
+        so_mau_in_ruot: 1
+        so_mat_in_ruot: 2
+        dinh_luong_giay_ruot: 70
+        kieu_binh_ruot_sach: 32
+        ti_le_chu_tren_anh: 9
+        kho_may_in_bia_rong: 72
+        kho_may_in_bia_dai: 102
+        toc_do_may_in_bia_ho_tro: 13000
+        so_mau_may_in_bia_ho_tro: 5
+        so_mat_may_in_bia_ho_tro: 2
+        kho_may_in_ruot_rong: 65
+        kho_may_in_ruot_dai: 98
+        toc_do_may_in_ruot_ho_tro: 13000
+        so_mau_may_in_ruot_ho_tro: 2
+        so_mat_may_in_ruot_ho_tro: 2
+      need_calculate:
+        - thoi_gian_kiem_tra_chu
+        - thoi_gian_kiem_tra_anh
+        - thoi_gian_dan_trang
+        - thoi_gian_binh_ban
+        - thoi_gian_in_thu
+        - thoi_gian_rip
+        - thoi_gian_ghi_hien_ban
+        - thoi_gian_che_ban_khac_kq
+        - thoi_gian_in_khac_kq
+        - thoi_gian_can_mang
+        - thoi_gian_pha_cat_bia
+        - thoi_gian_pha_cat_ruot
+        - thoi_gian_gap_sach
+        - thoi_gian_bat_tay
+        - thoi_gian_khau_chi
+        - thoi_gian_vao_bia_xen
+        - thoi_gian_dong_goi
+        - thoi_gian_hoan_thien_khac_kq
+      output:
+        don_gia_san_pham: 23098
+        thoi_gian_kiem_tra_chu: 46
+        tong_thoi_gian_san_xuat: 7213
+#        tong_thoi_gian_san_xuat: 10
+

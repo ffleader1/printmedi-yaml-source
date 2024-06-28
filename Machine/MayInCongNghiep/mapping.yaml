@@ -1,0 +1,10 @@
+khau_chi_bia_keo_nhiet:
+  thoi_gian_in_bia: !custom
+    toc_do_may_in: toc_do_may_in_bia_ho_tro
+    so_mat_may_in: so_mat_may_in_bia_ho_tro
+    so_mau_may_in: so_mau_may_in_bia_ho_tro
+  thoi_gian_in_ruot: !custom
+    toc_do_may_in: toc_do_may_in_ruot_ho_tro
+    so_mat_may_in: so_mat_may_in_ruot_ho_tro
+    so_mau_may_in: so_mau_may_in_ruot_ho_tro
+

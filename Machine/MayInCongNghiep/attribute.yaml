@@ -1,0 +1,20 @@
+- name: Tốc độ in
+  alias: toc_do_may_in
+  description: Tốc độ in cuả máy in công nghiệp
+  unit: Trang/phút
+- name: Số màu máy in
+  alias: so_mau_may_in
+  description: Số màu máy in được
+  unit: Màu
+- name: Số mặt máy in
+  alias: so_mat_may_in
+  description: Số mặt máy in được
+  unit: Mặt
+- name: Khổ máy in - dài
+  alias: kho_may_in_dai
+  description: Chiều dài của khổ máy in
+  unit: cm
+- name: Khổ máy in - rộng
+  alias: kho_may_in_rong
+  description: Chiều rộng của khổ máy in
+  unit: cm

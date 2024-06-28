@@ -1,0 +1,32 @@
+- name: Thời gian in bìa
+  description: Tính Số lượng tờ in bìa
+  case:
+    - machine:
+          processing: khau_chi_bia_keo_nhiet
+          calculation: thoi_gian_in_bia
+          specification:
+            toc_do_may_in: 500
+            so_mat_may_in: 2
+            so_mau_may_in: 4
+      input:
+        so_luong_to_in_bia: 1000
+        so_mau_in_bia: 4
+        so_mat_in_bia: 1
+      output:
+        thoi_gian_in_bia: 60
+- name: Thời gian in ruột
+  description: Tính Số lượng tờ in ruột
+  case:
+    - machine:
+          processing: khau_chi_bia_keo_nhiet
+          calculation: thoi_gian_in_ruot
+          specification:
+            toc_do_may_in: 500
+            so_mat_may_in: 2
+            so_mau_may_in: 4
+      input:
+        so_luong_to_in_ruot: 10000
+        so_mau_in_ruot: 2
+        so_mat_in_ruot: 2
+      output:
+        thoi_gian_in_ruot: 1200

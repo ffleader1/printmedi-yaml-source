@@ -1,0 +1,12 @@
+general:
+  name: Kodak Prosper Ultra 520 Press
+  machine_type: may_in_cong_nghiep
+  description: Kodak Prosper Ultra 520 Press là một dòng máy in phun kỹ thuật số tốc độ cao, được thiết kế để đáp ứng nhu cầu in ấn thương mại với số lượng lớn. Dòng máy này nổi bật với công nghệ in phun tiên tiến, mang lại chất lượng in ấn cao và hiệu suất vượt trội.
+  serial: AAAA-6789
+  brand: Kodak
+attribute:
+  toc_do_may_in: 30000
+  kho_may_in_dai: 102
+  kho_may_in_rong: 72
+  so_mau_may_in: 5
+  so_mat_may_in: 2

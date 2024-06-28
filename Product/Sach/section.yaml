@@ -1,0 +1,72 @@
+- code: STA.MAT
+  name: Đơn giá nguyên vật liệu
+  alias: preset_material
+  description: Giá thành nguyên vật liệu khác nhau
+- code: STA.PRD
+  name: Đơn giá công sản xuất
+  alias: preset_labor
+  description: Giá thành cho từng hoạt động sản xuất
+- code: STA.OTH
+  name: Hằng số khác
+  alias: preset_other
+  description: Những hằng số mặc định khác
+
+- code: INP.GEN
+  name: Thông tin đầu vào chung
+  alias: input_section_general
+  description: Thông tin đầu vào được sử dụng bởi tất cả hình thức gia công
+- code: INP.COV
+  name: Thông tin đầu vào bìa
+  alias: input_section_cover
+  description: Thông tin đầu vào chỉ liên quan tới bìa
+- code: INP.CON
+  name: Thông tin đầu vào ruột
+  alias: input_section_content
+  description: Thông tin đầu vào liên quan tới ruột
+- code: INP.PRT
+  name: Thông tin đầu vào thiết lập máy in
+  alias: input_section_printer
+  description: Thông tin đầu vào liên quan tới thiết lập máy in
+- code: INP.OTH
+  name: Thông tin đầu vào khác
+  alias: input_section_other
+  description: Thông tin đầu vào khác
+
+- code: CHR.INP
+  name: Thông tin thời gian
+  alias: input_section_chrono
+  description: Thông tin cần nhập để tính thời gian
+
+- code: CAL.COV
+  name: Thông tin tính toán bìa
+  alias: calculated_section_cover
+  description: Thông tin tín toán bìa
+- code: CAL.CON
+  name: Thông tin tính toán ruột
+  alias: calculated_section_content
+  description: Thông tin tín toán ruôt
+- code: CAL.SUM
+  name: Thông tin tính toán tổng
+  alias: calculated_material_cost
+  description: Thông tin tín toán tổng
+- code: CAL.OTH
+  name: Thông tin tính toán khác
+  alias: calculated_material_other
+  description: Thông tin tín toán khác
+
+- code: CHR.PPR
+  name: Thời gian chế bản
+  alias: chrono_section_preproduction
+  description: Tính toán thời gian chế bản
+- code: CHR.PRT
+  name: Thời gian in
+  alias: chrono_section_printing
+  description: Tính toán thời gian in
+- code: CHR.COM
+  name: Thời gian hoàn thiện
+  alias: chrono_section_completion
+  description: Tính toán thời gian hoàn thiện
+- code: CHR.TOT
+  name: Tổng thời gian
+  alias: chrono_section_total
+  description: Tổng thời gian sản xuất

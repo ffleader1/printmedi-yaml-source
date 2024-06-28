@@ -1,0 +1,12 @@
+general:
+  name: Taimes T3300SD
+  machine_type: may_in_cong_nghiep
+  description: Máy in Taimes T3300SD là một dòng máy in UV khổ lớn, được thiết kế đặc biệt cho ngành in ấn quảng cáo và công nghiệp.
+  serial: ABCD-1234
+  brand: Taimes
+attribute:
+  toc_do_may_in: 20000
+  kho_may_in_dai: 90
+  kho_may_in_rong: 60
+  so_mau_may_in: 3
+  so_mat_may_in: 2
