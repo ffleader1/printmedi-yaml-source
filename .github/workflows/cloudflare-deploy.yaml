@@ -1,0 +1,41 @@
+name: Cloudflare Deployment CI
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-test:
+    environment: DEPLOYMENT_SECRET
+    runs-on: ubuntu-latest
+    env:
+      CONTENT_DIR: ../hugo-src/content
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install latest nightly
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+          components: rustfmt, clippy
+      - name: Configure Git to Use the PAT Token
+        run: git config --global url."https://oauth2:${{ secrets.GH_PAT }}@github.com".insteadOf https://github.com
+      - name: Clone Hugo Source Gen Repo
+        run: |
+          cd ..
+          git clone --branch master https://github.com/${{ secrets.HUGO_SRC_GEN }} hugo-src
+      - name: Clone Rust Source Repo
+        run: |
+          cd ..
+          git clone https://github.com/${{ secrets.RS_SRC_GEN }} gen-src
+      - name: Build Rust Source Repo
+        run: |
+          cd ../gen-src
+          cargo build --release
+          ./target/release/print_formulas --mode compile
+      - name: Push to Hugo Source Gen Repo
+        run: |
+          cd ../hugo-src
+          git add content && git commit -m "triggered by printmedi-yaml-source: ${{ github.sha }}"
+          git push origin master
