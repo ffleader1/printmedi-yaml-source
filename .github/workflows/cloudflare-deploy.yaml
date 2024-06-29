@@ -39,5 +39,7 @@ jobs:
       - name: Push to Hugo Source Gen Repo
         run: |
           cd ../hugo-src
+          git config --global user.email "github.runner@github.com"
+          git config --global user.name "github.runner"
           git add content && git commit -m "triggered by printmedi-yaml-source: ${{ github.sha }}"
           git push origin master
