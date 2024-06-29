@@ -34,4 +34,6 @@ jobs:
           rsync -av ./printmedi-yaml-source/ ./gen-src/Formulas/
 
       - name: Run Test
-        run: cd gen-src && cargo test
+        run: |
+          cd ..
+          cd gen-src && cargo test
