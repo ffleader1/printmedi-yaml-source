@@ -1,4 +1,4 @@
-name: CI with Merge Protection
+name: Merge Test CI
 
 on:
   pull_request:
@@ -20,16 +20,13 @@ jobs:
           components: rustfmt, clippy
       - name: Configure Git to Use the PAT Token
         run: git config --global url."https://oauth2:${{ secrets.GH_PAT }}@github.com".insteadOf https://github.com
-      - name: Clone Repo
+      - name: Clone Rust Source Repo
         run: |
-          ls
           cd ..
-          ls
-          git clone https://github.com/ffleader1/${{ secrets.SRC_GEN }} gen-src
+          git clone https://github.com/${{ secrets.RS_SRC_GEN }} gen-src
 
       - name: Copy Files
         run: |
-          ls
           cd ..
           rsync -av ./printmedi-yaml-source/ ./gen-src/Formulas/
 
