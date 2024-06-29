@@ -30,6 +30,7 @@ jobs:
       - name: Copy Files
         run: |
           ls
+          cd ..
           rsync -av ./printmedi-yaml-source/ ./gen-src/Formulas/
 
       - name: Run Test
