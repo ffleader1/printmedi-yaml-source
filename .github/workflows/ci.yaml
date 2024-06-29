@@ -21,7 +21,11 @@ jobs:
       - name: Configure Git to Use the PAT Token
         run: git config --global url."https://oauth2:${{ secrets.GH_PAT }}@github.com".insteadOf https://github.com
       - name: Clone Repo
-        run: git clone https://github.com/ffleader1/${{ secrets.SRC_GEN }} gen-src
+        run: |
+          ls
+          cd ..
+          ls
+          git clone https://github.com/ffleader1/${{ secrets.SRC_GEN }} gen-src
 
       - name: Copy Files
         run: |
