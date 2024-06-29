@@ -24,10 +24,6 @@ jobs:
         run: |
           cd ..
           git clone https://github.com/${{ secrets.RS_SRC_GEN }} gen-src
-
-      - name: Copy Files
-        run: |
-          cd ..
           rsync -av ./printmedi-yaml-source/ ./gen-src/Formulas/
 
       - name: Run Test

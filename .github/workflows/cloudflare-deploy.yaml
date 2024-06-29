@@ -5,7 +5,7 @@ on:
       - master
 
 jobs:
-  build-and-test:
+  build-to-hugo-source:
     environment: DEPLOYMENT_SECRET
     runs-on: ubuntu-latest
     env:
@@ -29,6 +29,8 @@ jobs:
         run: |
           cd ..
           git clone https://github.com/${{ secrets.RS_SRC_GEN }} gen-src
+          rsync -av ./printmedi-yaml-source/ ./gen-src/Formulas/
+
       - name: Build Rust Source Repo
         run: |
           cd ../gen-src
