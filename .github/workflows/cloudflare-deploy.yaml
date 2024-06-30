@@ -29,9 +29,7 @@ jobs:
         run: |
           cd ..
           git clone https://github.com/${{ secrets.RS_SRC_GEN }} gen-src
-          cd ./gen-src/Formulas/
-          git fetch
-          git checkout ${{ github.sha }}
+          rsync -av ./printmedi-yaml-source/ ./gen-src/Formulas/
 
       - name: Build Rust Source Repo
         run: |
@@ -44,10 +42,4 @@ jobs:
           git config --global user.email "github.runner@github.com"
           git config --global user.name "github.runner"
           git add content && git commit -m "triggered by printmedi-yaml-source: ${{ github.sha }}"
-          git push origin master
-
-      - name: Update formula folder
-        run: |
-          cd ../gen-src
-          git commit -m "trigger update submodule by printmedi-yaml-source: ${{ github.sha }}"
           git push origin master
