@@ -295,7 +295,6 @@
         kieu_binh_bia_sach: 16
       output:
         he_so_pha_cat_bia: 1
-
 - name: Hệ số kiểu bình ruột
   description: Tính hệ số kiểu bình ruột
   case:
@@ -565,17 +564,17 @@
         thoi_gian_chuan_bi_bat_tay: 10
       output:
         thoi_gian_bat_tay: 25
-- name: Thời gian khâu chỉ
-  description: Tính thời gian khâu chỉ sách
+- name: Thời gian đóng ghim 
+  description: Tính thời gian đóng ghim
   case:
     - input:
         so_luong_san_pham: 250
-        toc_do_khau_chi: 20
+        toc_do_dong_ghim: 20
         so_trang_ruot_sach: 600
         kieu_binh_ruot_sach: 2
-        thoi_gian_chuan_bi_may_khau_chi: 1
+        thoi_gian_chuan_bi_may_dong_ghim: 1
       output:
-        thoi_gian_khau_chi: 1876
+        thoi_gian_dong_ghim: 1876
 - name: Thời gian vào bìa, xén 3 mặt
   description: Thời gian bắt tay sách, vào bìa, xén 3 mặt
   case:
@@ -650,15 +649,15 @@
         tong_thoi_gian_hoan_thien: 500
       output:
         tong_thoi_gian_san_xuat: 1600
-- name: Đơn Mẫu Khâu Chỉ Bìa Keo Nhiệt 1
+- name: Đơn Mẫu Sách Đóng Ghim 1
   alias: don_mau_1
-  description: Đơn mẫu khâu chỉ bìa keo nhiệt
+  description: Đơn mẫu đóng ghim 
   feature: true
   case:
     - input:
-        chieu_rong_kho_thanh_pham: 14.5
-        chieu_dai_kho_thanh_pham: 20.5
-        so_luong_san_pham: 20000
+        chieu_rong_kho_thanh_pham: 16
+        chieu_dai_kho_thanh_pham: 24
+        so_luong_san_pham: 35000
         so_trang_bia_sach: 4
         so_mau_in_bia: 6
         so_mat_in_bia: 1
@@ -695,12 +694,12 @@
         - thoi_gian_pha_cat_ruot
         - thoi_gian_gap_sach
         - thoi_gian_bat_tay
-        - thoi_gian_khau_chi
+        - thoi_gian_dong_ghim20
         - thoi_gian_vao_bia_xen
         - thoi_gian_dong_goi
         - thoi_gian_hoan_thien_khac_kq
       output:
-        don_gia_san_pham: 23098
+        don_gia_san_pham: 23163
         thoi_gian_kiem_tra_chu: 46
-        tong_thoi_gian_san_xuat: 7213
+        tong_thoi_gian_san_xuat: 10903
 

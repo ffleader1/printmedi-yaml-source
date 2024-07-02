@@ -256,16 +256,34 @@
   name: Thời gian chuẩn bị máy khâu chỉ
   alias: thoi_gian_chuan_bi_may_khau_chi
   description: Định mức thời gian chuẩn bị máy khâu chỉ.
-  tex: \mathcal{C}\mathscr{i}Det_{Sewingmachineprepa}
+  tex: \mathcal{C}\mathscr{i}Det_{SewingMachinePrep}
   unit: Phút
   section: CHR.COM
   constraint:
     min: 0
 - code: CHRHTKC
-  name: Tốc độ máy khâu chỉ
+  name: Tốc độ máy khâu chỉghim
   alias: toc_do_khau_chi
-  description: Định mức thời gian hoàn thành công việc - máy khâu chỉ
-  tex: \mathcal{C}\mathscr{i}Det_{Sewingmachinefin}
+  description: Tốc máy khâu chỉ
+  tex: \mathcal{C}\mathscr{i}Det_{SewingachineSpd}
+  unit: Tờ/Giờ
+  section: CHR.COM
+  constraint:
+    min: 0.1
+- code: CHRCBDGH
+  name: Thời gian chuẩn bị máy đóng ghim
+  alias: thoi_gian_chuan_bi_may_dong_ghim
+  description: Định mức thời gian chuẩn bị máy khâu chỉ
+  tex: \mathcal{C}\mathscr{i}Det_{StapleMachinePrep}
+  unit: Phút
+  section: CHR.COM
+  constraint:
+    min: 0
+- code: CHRHTDGH
+  name: Tốc độ máy đóng ghim
+  alias: toc_do_dong_ghim
+  description: Tốc độ máy đóng ghim
+  tex: \mathcal{C}\mathscr{i}Det_{StapleMachineSpd}
   unit: Tờ/Giờ
   section: CHR.COM
   constraint:

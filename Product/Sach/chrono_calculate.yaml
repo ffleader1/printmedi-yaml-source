@@ -173,6 +173,15 @@
   section: CHR.COM
   formula: !fn
     ceil((($so_luong_san_pham * $he_so_bu_hao) / $toc_do_khau_chi) * ceil($so_trang_ruot_sach/ $kieu_binh_ruot_sach) + $thoi_gian_chuan_bi_may_khau_chi)
+- code: CHRTGH
+  name: Thời gian đóng ghim
+  alias: thoi_gian_dong_ghim
+  description: Công thức tính thời gian đóng ghim
+  tex: \mathcal{C}\mathscr{i}Stapling
+  unit: Phút
+  section: CHR.COM
+  formula: !fn
+    ceil((($so_luong_san_pham * $he_so_bu_hao) / $toc_do_dong_ghim) * ceil($so_trang_ruot_sach/ $kieu_binh_ruot_sach) + $thoi_gian_chuan_bi_may_dong_ghim)
 - code: CHRTGBVX
   name: Thời gian vào bìa, xen 3 mặt
   alias: thoi_gian_vao_bia_xen
@@ -209,7 +218,7 @@
   section: CHR.COM
   formula: !fn
     $thoi_gian_can_mang + $thoi_gian_pha_cat_bia + $thoi_gian_pha_cat_ruot + $thoi_gian_gap_sach + $thoi_gian_bat_tay +
-    $thoi_gian_khau_chi + $thoi_gian_vao_bia_xen + $thoi_gian_dong_goi + $thoi_gian_hoan_thien_khac_kq
+    $thoi_gian_khau_chi + $thoi_gian_dong_ghim + $thoi_gian_vao_bia_xen + $thoi_gian_dong_goi + $thoi_gian_hoan_thien_khac_kq
   must_calculate: true
 - code: CHRTTL
   name: Tổng thời gian sản xuất
