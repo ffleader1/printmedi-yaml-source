@@ -182,15 +182,37 @@
   section: CHR.COM
   formula: !fn
     ceil((($so_luong_san_pham * $he_so_bu_hao) / $toc_do_dong_ghim) * ceil($so_trang_ruot_sach/ $kieu_binh_ruot_sach) + $thoi_gian_chuan_bi_may_dong_ghim)
-- code: CHRTGBVX
-  name: Thời gian vào bìa, xen 3 mặt
-  alias: thoi_gian_vao_bia_xen
-  description: Thời gian vào bìa (casing-in) và xén 3 mặt (trimming three sides)
-  tex: \mathcal{C}\mathscr{i}CastTrim
+
+- code: CHRTGVK
+  name: Thời gian vào keo
+  alias: thoi_gian_vao_keo
+  description: Thời gian vào keo
+  tex: \mathcal{C}\mathscr{i}Glue
   unit: Phút
   section: CHR.COM
   formula: !fn
-    ceil(($so_luong_san_pham * $he_so_bu_hao * 60) / $toc_do_vao_bia_xen + $thoi_gian_chuan_bi_vao_bia_xen)
+    ceil(($so_luong_san_pham * $he_so_bu_hao * 60) / $toc_do_vao_keo + $thoi_gian_chuan_bi_vao_keo)
+
+- code: CHRTGV
+  name: Thời gian vào bìa
+  alias: thoi_gian_vao_bia
+  description: Thời gian vào keo
+  tex: \mathcal{C}\mathscr{i}Covering
+  unit: Phút
+  section: CHR.COM
+  formula: !fn
+    ceil(($so_luong_san_pham * $he_so_bu_hao * 60) / $toc_do_vao_bia + $thoi_gian_chuan_bi_vao_bia)
+
+- code: CHRTGXEN
+  name: Thời gian xén 3 mặt
+  alias: thoi_gian_xen
+  description: Thời gian xén 3 mặt
+  tex: \mathcal{C}\mathscr{i}Trim
+  unit: Phút
+  section: CHR.COM
+  formula: !fn
+    ceil(($so_luong_san_pham * $he_so_bu_hao * 60) / $toc_do_xen + $thoi_gian_chuan_bi_xen)
+
 - code: CHRTGDG
   name: Thời gian đóng gói
   alias: thoi_gian_dong_goi
@@ -218,7 +240,8 @@
   section: CHR.COM
   formula: !fn
     $thoi_gian_can_mang + $thoi_gian_pha_cat_bia + $thoi_gian_pha_cat_ruot + $thoi_gian_gap_sach + $thoi_gian_bat_tay +
-    $thoi_gian_khau_chi + $thoi_gian_dong_ghim + $thoi_gian_vao_bia_xen + $thoi_gian_dong_goi + $thoi_gian_hoan_thien_khac_kq
+    $thoi_gian_khau_chi + $thoi_gian_dong_ghim + $thoi_gian_vao_keo + $thoi_gian_vao_bia + $thoi_gian_xen
+    + $thoi_gian_dong_goi + $thoi_gian_hoan_thien_khac_kq
   must_calculate: true
 - code: CHRTTL
   name: Tổng thời gian sản xuất

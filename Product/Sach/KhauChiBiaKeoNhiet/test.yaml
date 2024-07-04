@@ -576,15 +576,33 @@
         thoi_gian_chuan_bi_may_khau_chi: 1
       output:
         thoi_gian_khau_chi: 1876
-- name: Thời gian vào bìa, xén 3 mặt
-  description: Thời gian bắt tay sách, vào bìa, xén 3 mặt
+- name: Thời gian vào keo
+  description: Tính thời gian vào keo
   case:
     - input:
         so_luong_san_pham: 2500
-        toc_do_vao_bia_xen: 5000
-        thoi_gian_chuan_bi_vao_bia_xen: 10
+        toc_do_vao_keo: 5000
+        thoi_gian_chuan_bi_vao_keo: 10
       output:
-        thoi_gian_vao_bia_xen: 25
+        thoi_gian_vao_keo: 25
+- name: Thời gian vào bìa
+  description: Tính thời gian vào bìa
+  case:
+    - input:
+        so_luong_san_pham: 2500
+        toc_do_vao_bia: 5000
+        thoi_gian_chuan_bi_vao_bia: 10
+      output:
+        thoi_gian_vao_bia: 25
+- name: Thời gian xén 3 mặt
+  description: Thời gian xén 3 mặt
+  case:
+    - input:
+        so_luong_san_pham: 2500
+        toc_do_xen: 5000
+        thoi_gian_chuan_bi_xen: 10
+      output:
+        thoi_gian_xen: 25
 - name: Thời gian đóng gói
   description: Thời gian đóng gói
   case:
@@ -613,7 +631,9 @@
         thoi_gian_gap_sach: 15
         thoi_gian_bat_tay: 25
         thoi_gian_khau_chi: 25
-        thoi_gian_vao_bia_xen: 40
+        thoi_gian_vao_keo: 10
+        thoi_gian_vao_bia: 20
+        thoi_gian_xen: 20
         thoi_gian_dong_goi: 35
         thoi_gian_hoan_thien_khac_kq: 90
       need_calculate:
@@ -623,7 +643,8 @@
         - thoi_gian_gap_sach
         - thoi_gian_bat_tay
         - thoi_gian_khau_chi
-        - thoi_gian_vao_bia_xen
+        - thoi_gian_vao_bia
+        - thoi_gian_xen
         - thoi_gian_dong_goi
         - thoi_gian_hoan_thien_khac_kq
       output:
@@ -696,11 +717,13 @@
         - thoi_gian_gap_sach
         - thoi_gian_bat_tay
         - thoi_gian_khau_chi
-        - thoi_gian_vao_bia_xen
+        - thoi_gian_vao_keo
+        - thoi_gian_vao_bia
+        - thoi_gian_xen
         - thoi_gian_dong_goi
         - thoi_gian_hoan_thien_khac_kq
       output:
         don_gia_san_pham: 23098
         thoi_gian_kiem_tra_chu: 46
-        tong_thoi_gian_san_xuat: 7213
+        tong_thoi_gian_san_xuat: 8443
 

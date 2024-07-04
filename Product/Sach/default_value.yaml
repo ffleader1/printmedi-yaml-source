@@ -37,8 +37,12 @@ thoi_gian_chuan_bi_may_khau_chi: 15
 toc_do_khau_chi: 1000
 thoi_gian_chuan_bi_may_dong_ghim: 20
 toc_do_dong_ghim: 4000
-thoi_gian_chuan_bi_vao_bia_xen: 15
-toc_do_vao_bia_xen: 1000
+thoi_gian_chuan_bi_vao_keo: 15
+toc_do_vao_keo: 1000
+thoi_gian_chuan_bi_vao_bia: 15
+toc_do_vao_bia: 1000
+thoi_gian_chuan_bi_xen: 15
+toc_do_xen: 1000
 so_sach_moi_goi: 50
 so_nhan_cong_dong_goi: 2
 toc_do_dong_goi: 2

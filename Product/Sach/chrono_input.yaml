@@ -237,7 +237,7 @@
 - code: CHRCBBT
   name: Thời gian chuẩn bị bắt tay sách
   alias: thoi_gian_chuan_bi_bat_tay
-  description: Định mức thời gian chuẩn bị bắt tay sách - máy kỵ mã liên hợp
+  description: Thời gian chuẩn bị bắt tay sách - máy kỵ mã liên hợp
   tex: \mathcal{C}\mathscr{i}Prep_{Collating}
   unit: Phút
   section: CHR.COM
@@ -255,7 +255,7 @@
 - code: CHRCBKC
   name: Thời gian chuẩn bị máy khâu chỉ
   alias: thoi_gian_chuan_bi_may_khau_chi
-  description: Định mức thời gian chuẩn bị máy khâu chỉ.
+  description: Thời gian chuẩn bị máy khâu chỉ.
   tex: \mathcal{C}\mathscr{i}Det_{SewingMachinePrep}
   unit: Phút
   section: CHR.COM
@@ -273,7 +273,7 @@
 - code: CHRCBDGH
   name: Thời gian chuẩn bị máy đóng ghim
   alias: thoi_gian_chuan_bi_may_dong_ghim
-  description: Định mức thời gian chuẩn bị máy khâu chỉ
+  description: Thời gian chuẩn bị máy khâu chỉ
   tex: \mathcal{C}\mathscr{i}Det_{StapleMachinePrep}
   unit: Phút
   section: CHR.COM
@@ -288,24 +288,64 @@
   section: CHR.COM
   constraint:
     min: 0.1
-- code: CHRCBBVX
-  name: Thời gian chuẩn bị vào bìa, xén 3 mặt
-  alias: thoi_gian_chuan_bi_vao_bia_xen
-  description: Định mức thời gian chuẩn bị vào bìa, xén 3 mặt - máy kỵ mã liên hợp
-  tex: \mathcal{C}\mathscr{i}Prep_{CastTrim}
+
+- code: CHRCBVK
+  name: Thời gian chuẩn bị vào keo
+  alias: thoi_gian_chuan_bi_vao_keo
+  description: Thời gian chuẩn bị vào keo
+  tex: \mathcal{C}\mathscr{i}Prep_{Glue}
   unit: Phút
   section: CHR.COM
   constraint:
     min: 0
-- code: CHRSPBVX
-  name: Tốc độ vào bìa, xén 3 mặt
-  alias: toc_do_vao_bia_xen
+- code: CHRSPVK
+  name: Tốc độ vào keo
+  alias: toc_do_vao_keo
   description: Tốc độ vào bìa, xén 3 mặt bằng máy kỵ mã liên hợp
-  tex: \mathcal{C}\mathscr{i}Det_{CastTrim}
+  tex: \mathcal{C}\mathscr{i}Det_{Glue}
   unit: Cuốn/Giờ
   section: CHR.COM
   constraint:
     min: 0.1
+
+- code: CHRCBVB
+  name: Thời gian chuẩn bị vào bìa
+  alias: thoi_gian_chuan_bi_vao_bia
+  description: Thời gian chuẩn bị vào bìa
+  tex: \mathcal{C}\mathscr{i}Prep_{Covering}
+  unit: Phút
+  section: CHR.COM
+  constraint:
+    min: 0
+- code: CHRSPVB
+  name: Tốc độ vào bìa
+  alias: toc_do_vao_bia
+  description: Tốc độ vào bìa
+  tex: \mathcal{C}\mathscr{i}Det_{Covering}
+  unit: Cuốn/Giờ
+  section: CHR.COM
+  constraint:
+    min: 0.1
+
+- code: CHRCBXEN
+  name: Thời gian chuẩn bị vào bìa, xén 3 mặt
+  alias: thoi_gian_chuan_bi_xen
+  description: Thời gian chuẩn bị xén 3 mặt
+  tex: \mathcal{C}\mathscr{i}Prep_{Trim}
+  unit: Phút
+  section: CHR.COM
+  constraint:
+    min: 0
+- code: CHRSPXEN
+  name: Tốc độ vào bìa, xén 3 mặt
+  alias: toc_do_xen
+  description: Tốc độ xén 3 mặt
+  tex: \mathcal{C}\mathscr{i}Det_{Trim}
+  unit: Cuốn/Giờ
+  section: CHR.COM
+  constraint:
+    min: 0.1
+
 - code: CHRCNTBK
   name: Số sách mỗi gói
   alias: so_sach_moi_goi
