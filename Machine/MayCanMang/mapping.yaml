@@ -1,2 +1,4 @@
-khau_chi_bia_keo_nhiet:
-    thoi_gian_can_mang: !default
+khau_chi_bia_keo_nhiet: !mapping
+  thoi_gian_can_mang: !default
+sach_dong_ghim: !mapping
+  thoi_gian_can_mang: !default

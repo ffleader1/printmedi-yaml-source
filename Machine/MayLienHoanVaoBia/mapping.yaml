@@ -1,7 +1,15 @@
-khau_chi_bia_keo_nhiet:
+khau_chi_bia_keo_nhiet: !mapping
+  thoi_gian_khau_chi: !custom
+    thoi_gian_chuan_bi_may_lien_hoan_vao_bia: thoi_gian_chuan_bi_may_khau_chi
+    toc_do_may_lien_hoan_vao_bia: toc_do_khau_chi
   thoi_gian_bat_tay: !custom
     thoi_gian_chuan_bi_may_lien_hoan_vao_bia: thoi_gian_chuan_bi_bat_tay
     toc_do_may_lien_hoan_vao_bia: toc_do_bat_tay
-  thoi_gian_vao_bia_xen: !custom
-    thoi_gian_chuan_bi_may_lien_hoan_vao_bia: thoi_gian_chuan_bi_vao_bia_xen
-    toc_do_may_lien_hoan_vao_bia: toc_do_vao_bia_xen
+  thoi_gian_vao_bia: !custom
+    thoi_gian_chuan_bi_may_lien_hoan_vao_bia: thoi_gian_chuan_bi_vao_bia
+    toc_do_may_lien_hoan_vao_bia: toc_do_vao_bia
+  thoi_gian_xen: !custom
+    thoi_gian_chuan_bi_may_lien_hoan_vao_bia: thoi_gian_chuan_bi_xen
+    toc_do_may_lien_hoan_vao_bia: toc_do_xen
+sach_dong_ghim: !refer
+  khau_chi_bia_keo_nhiet

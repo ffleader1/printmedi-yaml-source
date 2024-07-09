@@ -1,4 +1,4 @@
-khau_chi_bia_keo_nhiet:
+khau_chi_bia_keo_nhiet: !mapping
   thoi_gian_in_bia: !custom
     toc_do_may_in: toc_do_may_in_bia_ho_tro
     so_mat_may_in: so_mat_may_in_bia_ho_tro
@@ -7,4 +7,6 @@ khau_chi_bia_keo_nhiet:
     toc_do_may_in: toc_do_may_in_ruot_ho_tro
     so_mat_may_in: so_mat_may_in_ruot_ho_tro
     so_mau_may_in: so_mau_may_in_ruot_ho_tro
+sach_dong_ghim: !refer
+  khau_chi_bia_keo_nhiet
 

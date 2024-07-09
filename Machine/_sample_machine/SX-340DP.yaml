@@ -1,0 +1,9 @@
+general:
+  name: SX-340DP
+  machine_type: may_khau_chi
+  description: Máy khâu chỉ SX - 340DP là dòng máy thành phẩm sau in dùng để khẩu chỉ các sản phẩm như sách, truyện,... được thiết kế với kích thước vừa phải phù hợp với các đơn vị in ấn có không gian làm việc không quá lớn, tiện lợi trong quá trình thành phẩm và di chuyển.
+  serial: A3K36-OCCHO
+  brand: HL
+attribute:
+  thoi_gian_chuan_bi_may_khau_chi: 20
+  toc_do_khau_chi: 2400

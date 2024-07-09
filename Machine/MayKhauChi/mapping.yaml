@@ -1,2 +1,4 @@
-khau_chi_bia_keo_nhiet:
+khau_chi_bia_keo_nhiet: !mapping
+  thoi_gian_khau_chi: !default
+sach_dong_ghim: !mapping
   thoi_gian_khau_chi: !default

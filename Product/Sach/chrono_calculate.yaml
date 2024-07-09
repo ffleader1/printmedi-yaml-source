@@ -1,5 +1,5 @@
 - code: CHRKTT
-  name: Thời gian soát lỗi, kiểm tra file chữ
+  name: Soát lỗi, kiểm tra file chữ
   alias: thoi_gian_kiem_tra_chu
   description: Thời gian soát lỗi, kiểm tra file chữ
   tex: \mathcal{C}\mathscr{pp}Ktr_{txt}
@@ -8,7 +8,7 @@
   formula: !fn
     ceil($tong_so_trang_sach * ($ti_le_chu_tren_anh/($ti_le_chu_tren_anh + 1)) / $nang_luc_kiem_tra_chu * $nhan_luc_kiem_tra_chu)
 - code: CHRKTI
-  name: Thời gian xử lý ảnh, kiểm tra file ảnh
+  name: Xử lý ảnh, kiểm tra file ảnh
   alias: thoi_gian_kiem_tra_anh
   description: Thời gian xử lý ảnh, kiểm tra file ảnh
   tex: \mathcal{C}\mathscr{pp}Ktr_{img}
@@ -17,7 +17,7 @@
   formula: !fn
     ceil($tong_so_trang_sach * (1/($ti_le_chu_tren_anh+1)) / $nang_luc_kiem_tra_anh * $nhan_luc_kiem_tra_anh)
 - code: CHRTDT
-  name: Thời gian dàn trang
+  name: Dàn trang
   alias: thoi_gian_dan_trang
   description: Thời gian dàn trang (layout)
   tex: \mathcal{C}\mathscr{pp}T_{layout}
@@ -26,7 +26,7 @@
   formula: !fn
     ceil($tong_so_trang_sach * $nang_luc_dan_trang)
 - code: CHRTBB
-  name: Thời gian bình bản
+  name: Bình bản
   alias: thoi_gian_binh_ban
   description: Thời gian bình bản (Makeready)
   tex: \mathcal{C}\mathscr{pp}Makeready
@@ -35,7 +35,7 @@
   formula: !fn
     $dinh_muc_thoi_gian_binh_ban
 - code: CHRTIT
-  name: Thời gian in thử
+  name: In thử
   alias: thoi_gian_in_thu
   description: Thời gian in thử
   tex: \mathcal{C}\mathscr{pp}test_print
@@ -44,7 +44,7 @@
   formula: !fn
     ceil(((($so_trang_ruot_sach/$kieu_binh_ruot_sach)*$so_mat_in_ruot + $so_mat_in_bia))/$toc_do_in_thu + $thoi_gian_chuan_bi_in_thu)
 - code: CHRTRIP
-  name: Thời gian RIP
+  name: RIP
   alias: thoi_gian_rip
   description: Thời gian RIP (Raster Image Processor).
   tex: \mathcal{C}\mathscr{pp}rip
@@ -53,7 +53,7 @@
   formula: !fn
     ceil(((($so_trang_ruot_sach/$kieu_binh_ruot_sach)*$so_mat_in_ruot + $so_mat_in_bia)) * $toc_do_rip)
 - code: CHRTPLM
-  name: Thời gian ghi hiện bản
+  name: Ghi hiện bản
   alias: thoi_gian_ghi_hien_ban
   description: Thời gian ghi hiện bản (Platemaking).
   tex: \mathcal{C}\mathscr{pp}platemaking
@@ -81,7 +81,7 @@
     $thoi_gian_kiem_tra_chu + $thoi_gian_kiem_tra_anh + $thoi_gian_dan_trang + $thoi_gian_binh_ban + $thoi_gian_in_thu + $thoi_gian_rip + $thoi_gian_ghi_hien_ban + $thoi_gian_che_ban_khac_kq
   must_calculate: true
 - code: CHRPRCOV
-  name: Thời gian in bìa
+  name: In bìa
   alias: thoi_gian_in_bia
   description: Thời gian in bìa trong quá trình sản xuất
   tex: \mathcal{C}\mathscr{pr}P_{cover}
@@ -91,7 +91,7 @@
     ceil(($so_luong_to_in_bia * ceil( $so_mau_in_bia / $so_mau_may_in_bia_ho_tro) * ($so_mat_in_bia / $toc_do_may_in_bia_ho_tro) * 60/ $so_mat_may_in_bia_ho_tro))
   must_calculate: true
 - code: CHRPRCON
-  name: Thời gian in ruột
+  name: In ruột
   alias: thoi_gian_in_ruot
   description: Thời gian in ruột trong quá trình sản xuất
   tex: \mathcal{C}\mathscr{pr}P_{content}
@@ -120,7 +120,7 @@
     $thoi_gian_in_bia + $thoi_gian_in_ruot + $thoi_gian_in_khac_kq
   must_calculate: true
 - code: CHRTGCM
-  name: Thời gian cán màng
+  name: Cán màng
   alias: thoi_gian_can_mang
   description: Công thức tính thời gian cán màng
   tex: \mathcal{C}\mathscr{i}Lamination
@@ -129,7 +129,7 @@
   formula: !fn
     ceil($thoi_gian_chuan_bi_can_mang + ($do_dai_mang_bia / $toc_do_can_mang))
 - code: CHRKFPB
-  name: Thời gian pha cắt bìa
+  name: Pha cắt bìa
   alias: thoi_gian_pha_cat_bia
   description: Công thức tính thời gian pha cắt bìa
   tex: \mathcal{C}\mathscr{i}KnifePhase_{cover}
@@ -138,7 +138,7 @@
   formula: !fn
     ceil(ceil(($so_luong_to_in_bia * $dinh_luong_giay_bia * 10^-4)/$chieu_cao_chong_cat_bia) * $toc_do_cat_mot_nhat_bia * $he_so_pha_cat_bia)
 - code: CHRKFPR
-  name: Thời gian pha cắt ruột
+  name: Pha cắt ruột
   alias: thoi_gian_pha_cat_ruot
   description: Công thức tính thời gian pha cắt ruột
   tex: \mathcal{C}\mathscr{i}KnifePhase_{content}
@@ -147,7 +147,7 @@
   formula: !fn
     ceil(($so_luong_to_in_ruot * $dinh_luong_giay_ruot  * $toc_do_cat_mot_nhat_ruot * $he_so_pha_cat_ruot * 10^-4)/$chieu_cao_chong_cat_ruot)
 - code: CHRTGGS
-  name: Thời gian gấp sách
+  name: Gấp sách
   alias: thoi_gian_gap_sach
   description: Công thức tính thời gian gấp sách
   tex: \mathcal{C}\mathscr{i}Folding
@@ -156,7 +156,7 @@
   formula: !fn
     ceil(ceil(($so_luong_to_in_ruot * 60) / $toc_do_gap_sach) + ceil($so_trang_ruot_sach/ $kieu_binh_ruot_sach) * $thoi_gian_chuan_bi_may_gap_sach)
 - code: CHRTGKBTS
-  name: Thời gian bắt tay sách
+  name: Bắt tay sách
   alias: thoi_gian_bat_tay
   description: Thời gian bắt tay sách, dùng máy kỵ mã liên hợp
   tex: \mathcal{C}\mathscr{i}Collating
@@ -165,7 +165,7 @@
   formula: !fn
     ceil(($so_luong_san_pham * $he_so_bu_hao * 60) / $toc_do_bat_tay + $thoi_gian_chuan_bi_bat_tay)
 - code: CHRTGKC
-  name: Thời gian khâu chỉ
+  name: Khâu chỉ
   alias: thoi_gian_khau_chi
   description: Công thức tính thời gian khâu chỉ
   tex: \mathcal{C}\mathscr{i}Sewing
@@ -174,7 +174,7 @@
   formula: !fn
     ceil((($so_luong_san_pham * $he_so_bu_hao) / $toc_do_khau_chi) * ceil($so_trang_ruot_sach/ $kieu_binh_ruot_sach) + $thoi_gian_chuan_bi_may_khau_chi)
 - code: CHRTGH
-  name: Thời gian đóng ghim
+  name: Đóng ghim
   alias: thoi_gian_dong_ghim
   description: Công thức tính thời gian đóng ghim
   tex: \mathcal{C}\mathscr{i}Stapling
@@ -184,7 +184,7 @@
     ceil((($so_luong_san_pham * $he_so_bu_hao) / $toc_do_dong_ghim) * ceil($so_trang_ruot_sach/ $kieu_binh_ruot_sach) + $thoi_gian_chuan_bi_may_dong_ghim)
 
 - code: CHRTGVK
-  name: Thời gian vào keo
+  name: Vào keo
   alias: thoi_gian_vao_keo
   description: Thời gian vào keo
   tex: \mathcal{C}\mathscr{i}Glue
@@ -194,9 +194,9 @@
     ceil(($so_luong_san_pham * $he_so_bu_hao * 60) / $toc_do_vao_keo + $thoi_gian_chuan_bi_vao_keo)
 
 - code: CHRTGV
-  name: Thời gian vào bìa
+  name: Vào bìa
   alias: thoi_gian_vao_bia
-  description: Thời gian vào keo
+  description: Thời gian vào bìa
   tex: \mathcal{C}\mathscr{i}Covering
   unit: Phút
   section: CHR.COM
@@ -204,7 +204,7 @@
     ceil(($so_luong_san_pham * $he_so_bu_hao * 60) / $toc_do_vao_bia + $thoi_gian_chuan_bi_vao_bia)
 
 - code: CHRTGXEN
-  name: Thời gian xén 3 mặt
+  name: Xén 3 mặt
   alias: thoi_gian_xen
   description: Thời gian xén 3 mặt
   tex: \mathcal{C}\mathscr{i}Trim
@@ -214,7 +214,7 @@
     ceil(($so_luong_san_pham * $he_so_bu_hao * 60) / $toc_do_xen + $thoi_gian_chuan_bi_xen)
 
 - code: CHRTGDG
-  name: Thời gian đóng gói
+  name: Đóng gói
   alias: thoi_gian_dong_goi
   description: Thời gian đóng gói
   tex: \mathcal{C}\mathscr{i}Packaging
