@@ -2,7 +2,11 @@
   alias: thoi_gian_chuan_bi_can_mang
   description: Thời gian chuẩn bị máy cán màng
   unit: Phút
+  constraint:
+    min: 0
 - name: Tốc độ cán màng
   alias: toc_do_can_mang
   description: Tốc độ máy cán màng
   unit: m/Phút
+  constraint:
+    min: 0.1

@@ -1,8 +1,12 @@
-- name: Tốc độ chuẩn bị máy kỵ mã
+- name: Thời gian chuẩn bị máy kỵ mã
   alias: thoi_gian_chuan_bi_may_lien_hoan_vao_bia
   description: Định mức thời gian chuẩn bị máy kỹ mã
   unit: Phút
+  constraint:
+    min: 0.0
 - name: Tốc độ hoàn thành công việc kỵ mã
   alias: toc_do_may_lien_hoan_vao_bia
   description: Tốc độ máy liên hoàn vào bìa
   unit: Cuốn/Giờ
+  constraint:
+    min: 0.1

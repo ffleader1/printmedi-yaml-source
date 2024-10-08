@@ -2,7 +2,11 @@
   alias: toc_do_in_thu
   description: Tốc độ in thử
   unit: Trang/phút
+  constraint:
+    min: 0.1
 - name: Thời gian chuẩn bị
   alias: thoi_gian_chuan_bi_in_thu
   description: Thời gian chuẩn bị
   unit: Phút
+  constraint:
+    min: 0.0

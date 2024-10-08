@@ -2,19 +2,30 @@
   alias: toc_do_may_in
   description: Tốc độ in cuả máy in công nghiệp
   unit: Trang/phút
+  constraint:
+    min: 0.1
 - name: Số màu máy in
   alias: so_mau_may_in
   description: Số màu máy in được
   unit: Màu
+  constraint:
+    min: 1
 - name: Số mặt máy in
   alias: so_mat_may_in
   description: Số mặt máy in được
   unit: Mặt
+  option:
+    - 1
+    - 2
 - name: Khổ máy in - dài
   alias: kho_may_in_dai
   description: Chiều dài của khổ máy in
   unit: cm
+  constraint:
+    min: 0.1
 - name: Khổ máy in - rộng
   alias: kho_may_in_rong
   description: Chiều rộng của khổ máy in
   unit: cm
+  constraint:
+    min: 0.1

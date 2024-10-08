@@ -2,7 +2,11 @@
   alias: toc_do_gap_sach
   description: Định mức thời gian hoàn thành công việc - máy gấp sách
   unit: Tay sách/Phút
+  constraint:
+    min: 0
 - name: Tốc độ chuẩn bị máy gấp sách
   alias: thoi_gian_chuan_bi_may_gap_sach
   description: Định mức thời gian chuẩn bị máy gấp sách.
   unit: Phút
+  constraint:
+    min: 0.1
